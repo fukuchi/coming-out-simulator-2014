@@ -159,7 +159,7 @@ body{
 
 	white-space: nowrap;
 	font-family: sans-serif;
-	font-weight: 100;
+	font-weight: 300;
 	font-size: 16px;
 	color: #bbb;
 	text-align: center;
@@ -208,7 +208,7 @@ body{
 #game #dialogue > div{
 	position: relative;
 	font-family: sans-serif;
-	font-weight: 100;
+	font-weight: 300;
 	font-size: 16px;
 	display: inline-block;
 	max-width: 280px;
