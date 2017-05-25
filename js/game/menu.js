@@ -13,7 +13,7 @@ function Start(){
 	//////////////////////////////
 
 	N("<b>COMING OUT SIMULATOR 2014</b>");
-	N("はんぶん本当の物語についての、はんぶん真面目なゲーム。");
+	N("「半分の真実」についての、半分本当のゲーム。");
 	N("やあプレイヤー、このゲームへようこそ。なんてね。");
 	N("さて、まずはなにをしたい?");
 
@@ -44,56 +44,56 @@ function Play(message){
 
 	// Asked neither
 	if(!$.asked_about && !$.asked_credits){
-		N("Jumping right into it! Great!");
-		N("No messing around with reading the Credits or the About This Game sections or--");
-		p("Shush.");
-		N("Fine, fine.");
+		N("気が早いね!その調子!");
+		N("「作者紹介」なんか読んで時間を無駄にしたくないと。他にも「このゲームについて」とか...");
+		p("いいから。");
+		N("わかったわかった。");
 	}
 	// Asked both
 	if($.asked_about && $.asked_credits){
 		p(". . .");
-		p("Why did you make that a clickable option, when it was the only option left.");
-		N("NO IDEA");
+		p("これしか選択肢が残ってないのに、なんでわざわざクリックさせたの?");
+		N("さあてね。");
 	// Asked either
 	}else if($.asked_about || $.asked_credits){
-		N("Yes, let's!");
+		N("よし、始めよう!");
 	}
 
-	N("Let's travel back four years ago, to 2010...");
-	p("That was FOUR years ago?!");
-	N("...to the evening that changed my life forever.");
+	N("あれは今から四年前、2010年のことだった...");
+	p("四年前だって?!");
+	N("...その日の晩に、僕の人生は永遠に変わってしまった。");
 
-	N("Tell me, dear player, how do you think this all ends?");
+	N("さてプレイヤー君、この物語はどんな風に終わると思う?");
 
 	Choose({
-		"With flowers and rainbows and gay unicorns?": function(message){
+		"ゲイらしく、お花と虹とユニコーンがいっぱい?": function(message){
 			$.main_menu_convo_1 = 1;
 
 			p(message);
-			N("Yes. That is exactly how this game ends.");
-			p("Really?");
-			N("No.");
+			N("よく分かったね。その通り、このゲームのエンディングはそんな感じだ。");
+			p("マジ?");
+			N("嘘。");
 			Play_2();
 		},
-		"Apparently, with you redditing at Starbucks.": function(message){
+		"今みたいに、スタバでネットだろ。": function(message){
 			$.main_menu_convo_1 = 2;
 
 			p(message);
-			N("Hey, I'm coding on this laptop. Turning my coming-of-age story into the game you're playing right now.");
-			p("Naw, you're probably procrastinating.");
-			N("Look who's talking.");
-			p("Touché, douché.");
-			N("Anyway...");
+			N("ちょ、僕は今プログラム書いてるんだよ。かつて僕の身に起きた出来事を、こうやって君がいまプレイしているゲームとして作り変えているんだ。");
+			p("へー、サボってるようにしか見えないけど。");
+			N("お互い様だろ。");
+			p("へいへい。");
+			N("とにかく...");
 			Play_2();
 		},
-		"IT ALL ENDS IN BLOOD": function(message){
+		"流血沙汰の大惨事!": function(message){
 			$.main_menu_convo_1 = 3;
 
 			p(message);
-			N("Uh, compared to that, I guess my story isn't that tragic.");
-			N("Although that's kind of a glass one-hundredths-full interpretation.");
-			p("blooooood.");
-			N("Anyway...");
+			N("ハハッ、それに比べりゃこの物語はそこまで悲劇的じゃないってことになるかな。");
+			N("もちろん、せいいっぱいに楽観的に考えて、ってことだけど。");
+			p("血ィがー血ィがー");
+			N("とにかく...");
 			Play_2();
 		}
 	});
@@ -201,30 +201,30 @@ function Credits(message){
 	if($.asked_about){
 		SipCoffee(message);
 	}else{
-		SipCoffee("Who are you?");
+		SipCoffee("君は誰?");
 	}
 	
-	N("Ah, how rude of me! Let me introduce myself.");
-	N("Hi, I'm Nicky Case.");
-	N("That's not my legal name, it's just my REAL name.");
+	N("おっとこりゃ失礼。それでは自己紹介しよう。");
+	N("僕の名前は Nicky Case.");
+	N("法律上の名前はそうじゃないんだけど、これは僕の本当の名前だ。");
 
-	p("That's totes weird, dude.");
+	p("イミフだな、おい。");
 	if($.asked_about){
-		p("And like you just told me, this is your personal story?");
+		p("それで、さっき君が言ったように、これは君自身の物語なのかい?");
 	}else{
-		p("And you made this game?");
+		p("それでこのゲームは君が作ったの?");
 	}
 
-	N("Yep, I am the sole writer / programmer / artist of Coming Out Simulator 2014.");
+	N("そう。この僕が「Coming Out Simulator 2014」の作者でありプログラマーだ。");
 
 	if($.asked_about){
-		p("All of this yourself?");
-		p("I said it before and I'll say it again...");
-		p("Of course. You narcissist.");
-		N("Well it's not ALL me.");
-		N("The sounds & audio are from various public domain sources.");
+		p("ぜんぶ自分で??");
+		p("前にも言ったけど、君さぁ...");
+		p("かなりのナルシストだよ。");
+		N("あ、本当にぜんぶを自分でって訳じゃないんだ。");
+		N("効果音はいろんな無料素材を使っている。");
 	}else{
-		N("The sounds & audio, though, are from various public domain sources.");
+		N("もっとも効果音はいろんな無料素材を使っている。");
 	}
 
 	N("But although it's mostly just me behind this game...");
@@ -275,12 +275,12 @@ function About(message){
 	N("僕は自分のセクシャリティもオープンにしてるくらいだから、ソースコードもオープンなのさ。");
 
 	p("それ、うまいこと言ったつもり?");
-	N("「僕のこと開発してみない?」ってプログラマージョーク、どう?");
+	N("「僕のこと開発してみない?」っていうプログラマージョーク、どう?");
 	p("やめとけ。");
 
 	if($.asked_credits){
 		Choose({
-			"Let's just play this game already.": Play
+			"いいからさっさとゲームを始めようぜ。": Play
 		});
 	}else{
 		Choose({
