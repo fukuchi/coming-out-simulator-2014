@@ -13,17 +13,17 @@ function Start(){
 	//////////////////////////////
 
 	N("<b>COMING OUT SIMULATOR 2014</b>");
-	N("A half-true game about half-truths.");
-	N("Hey there, player. Welcome to this game, I guess.");
-	N("What would you like to do now?");
+	N("はんぶん本当の物語についての、はんぶん真面目なゲーム。");
+	N("やあプレイヤー、このゲームへようこそ。なんてね。");
+	N("さて、まずはなにをしたい?");
 
 	Choose({
-		"Let's play this thing!": Play,
-		"Who are you? (Credits)": function(){
-			Credits("Who are you?");
+		"さっそくプレイしよう!": Play,
+		"君は誰? (作者紹介)": function(){
+			Credits("君は誰?");
 		},
-		"Hm, tell me more. (About This Game)": function(){
-			About("Hm, tell me more.");
+		"もうちょい詳しく。(このゲームについて)": function(){
+			About("もうちょい詳しく。");
 		}
 	});
 
@@ -254,13 +254,13 @@ function About(message){
 	if($.asked_credits){
 		N("I wanted to tell my story.");
 	}else{
-		N("This game...");
-		N("...more like a conversation simulator, really...");
-		N("...is a very personal story.");
+		N("このゲームは...");
+		N("...会話シミュレーターみたいなものだけど、実のところは...");
+		N("...とても個人的な物語なんだ。");
 	}
 	
-	p("Of course. You narcissist.");
-	N("Ha, of course.");
+	p("なるほど。ナルシストっぽいな。");
+	N("ふん、そうかもね。");
 
 	if($.asked_credits){
 		p("Actually no, a narcissist would use their real name.");
@@ -268,15 +268,15 @@ function About(message){
 		p("Aight, aight. Weirdo.");
 	}
 
-	N("I made this game for the #Nar8 Game Jam. Gave me an excuse. And a deadline!");
-	p("You procrastinated until the last day to enter, didn't you.");
-	N("Yes.");
-	N("Also! This game is uncopyrighted. Dedicated to the public domain.");
-	N("I'm as open with my source code as I am with my sexuality.");
+	N("このゲームは #Nar8 Game Jam っていう大会用に作ったんだ。大会があると作ろうって気になるだろ? 締切もあるし。");
+	p("どうせ最終日まで手をつけずにぼんやりしてたんだろ。");
+	N("そうだよ。");
+	N("ともかく、このゲームは著作権を放棄している。パブリックドメインなんだ。");
+	N("僕は自分のセクシャリティもオープンにしてるくらいだから、ソースコードもオープンなのさ。");
 
-	p("Ugh, that's a terrible pun.");
-	N("Howzabout a 'Fork Me' programming pun?");
-	p("noooooo.");
+	p("それ、うまいこと言ったつもり?");
+	N("「僕のこと開発してみない?」ってプログラマージョーク、どう?");
+	p("やめとけ。");
 
 	if($.asked_credits){
 		Choose({
@@ -284,9 +284,9 @@ function About(message){
 		});
 	}else{
 		Choose({
-			"Bad puns aside, can we play now?": Play,
-			"So who ARE you? (Credits)": function(){
-				Credits("So who ARE you?");
+			"冗談はおいといて、もうプレイできる?": Play,
+			"で、君は誰なんだい? (作者紹介)": function(){
+				Credits("で、君は誰なんだい?");
 			}
 		});
 	}
