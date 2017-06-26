@@ -103,14 +103,14 @@ function Play(message){
 function Play_2(){
 
 	if(!$.asked_about){
-		N("If you didn't skip the About This Game section, you'd know this is a very personal story.");
-		p("Shush.");
+		N("君が「このゲームについて」を選んでいてくれたら、このゲームがとても個人的なストーリーについてのものだと、わかってもらえたんだけどね。");
+		p("チッ。");
 	}
 
-	N("This game includes dialogue that I, my parents, and my ex-boyfriend actually said.");
-	N("As well as all the things we could have, should have, and never would have said.");
-	N("It doesn't matter which is which.");
-	N("Not anymore.");
+	N("このゲームには、僕が両親や元カレと交わした会話を再現したものが含まれている。");
+	N("もちろん、こう言えば良かった、ああ言うべきだった、そして絶対に言うべきでなかった言葉も、ゲームには入れてある。");
+	N("どの言葉がそのどれにあてはまるかは、どうでもいい。");
+	N("今となってはね。");
 
 	Choose({
 		"How can I win a game with no right answers?": function(message){
@@ -205,7 +205,7 @@ function Credits(message){
 	}
 	
 	N("おっとこりゃ失礼。それでは自己紹介しよう。");
-	N("僕の名前は Nicky Case.");
+	N("僕の名前は Nicky Case。");
 	N("法律上の名前はそうじゃないんだけど、これは僕の本当の名前だ。");
 
 	p("イミフだな、おい。");
@@ -227,18 +227,18 @@ function Credits(message){
 		N("もっとも効果音はいろんな無料素材を使っている。");
 	}
 
-	N("But although it's mostly just me behind this game...");
-	N("...there's a lot of people behind this game's story.");
+	N("たしかに僕はこのゲームに出ずっぱりだけど...");
+	N("...このゲームのストーリー自体は、沢山の人にも関わるものでもあるんだ。");
 
 	if($.asked_about){
 		Choose({
-			"Speaking of which, let's play that! Now!": Play
+			"よしわかった、さっさとプレイしよう! いますぐ!": Play
 		});
 	}else{
 		Choose({
-			"Speaking of that, can we play it now?": Play,
-			"Why'd you make this? (About This Game)": function(){
-				About("Why'd you make this?");
+			"よくわかったから、プレイしてもいい?": Play,
+			"なぜこのゲームを作ったの? (このゲームについて)": function(){
+				About("なぜこのゲームを作ったの?");
 			}
 		});
 	}
@@ -252,7 +252,7 @@ function About(message){
 	SipCoffee(message);
 
 	if($.asked_credits){
-		N("I wanted to tell my story.");
+		N("僕は僕の物語を伝えたかったんだ。");
 	}else{
 		N("このゲームは...");
 		N("...会話シミュレーターみたいなものだけど、実のところは...");
@@ -263,9 +263,9 @@ function About(message){
 	N("ふん、そうかもね。");
 
 	if($.asked_credits){
-		p("Actually no, a narcissist would use their real name.");
-		N("I told you, it IS my real na--");
-		p("Aight, aight. Weirdo.");
+		p("違うか。ナルシストってのは本名を出したがるもんだし。");
+		N("さっきのは本当の名前だって—");
+		p("はいはい、わかったよナルちゃん。");
 	}
 
 	N("このゲームは #Nar8 Game Jam っていう大会用に作ったんだ。大会があると作ろうって気になるだろ? 締切もあるし。");
