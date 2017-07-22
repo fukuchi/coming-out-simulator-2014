@@ -113,27 +113,27 @@ function Play_2(){
 	N("今となってはね。");
 
 	Choose({
-		"How can I win a game with no right answers?": function(message){
+		"そんなグチャグチャでうまくいくの?": function(message){
 			$.main_menu_convo_2 = 2;
 
 			p(message);
-			N("Exactly.");
+			N("君もそう思うだろ。");
 			p(". . .");
 			Play_3();
 		},
-		"You're a bit of a downer, aren't you?": function(message){
+		"お前、ちょっとダウナー系だよな?": function(message){
 			$.main_menu_convo_2 = 1;
 
 			p(message);
-			N("LIFE is a bit of a downer.");
-			p("So that's a yes.");
+			N("人生だってそこそこダウナー系だよ。");
+			p("ほら、やっぱりダウナー系だよお前は。");
 			Play_3();
 		},
-		"This 'true' game is full of lies?": function(message){
+		"真実についてのゲームじゃなかったのかい?": function(message){
 			$.main_menu_convo_2 = 3;
 
 			p(message);
-			N("Even if the dialogue was 100% accurate, it'd still be 100% lies.");
+			N("すべての言葉が100%正しく再現されていたとしても、結局は嘘であることに変わりはないさ。");
 			p(". . .");
 			Play_3();
 		}
@@ -143,22 +143,22 @@ function Play_2(){
 
 function Play_3(){
 
-	N("You'll be playing as me, circa 2010.");
+	N("君にはこれから、2010年頃の僕になってもらう。");
 	if(!$.asked_credits){
-		N("Because you skipped the Credits, my (not-yet-legal) name is Nicky Case. Just so you know.");
-		p("Shush.");
+		N("君が作者紹介をとばしたからあらためて伝えよう。僕の（まだ合法ではない）名前は Nicky Case。これで覚えてもらえたかな。");
+		p("チッ。");
 	}
 
 	var whatISay;
 	switch($.main_menu_convo_1){
-		case 1: whatISay = "This game doesn't end with gay unicorns. "; break;
-		case 2: whatISay = "This game is a coming-out, a coming-of-age, a coming-to-terms. "; break;
-		case 3: whatISay = "This game ends not in blood, but in tears. "; break;
+		case 1: whatISay = "このゲームはゲイのユニコーンなんかで終わりはしない。"; break;
+		case 2: whatISay = "このゲームはカミングアウトについてのものであり、成長についてのものであり、人生に折り合いをつけることについてのものでもある。"; break;
+		case 3: whatISay = "このゲームは流血沙汰で終わったりはしない。涙は流れるだろうけど。"; break;
 	}
 	switch($.main_menu_convo_2){
-		case 1: whatISay += "Sorry for being a bit of a downer."; break;
-		case 2: whatISay += "And there are no right answers."; break;
-		case 3: whatISay += "And it's full of lies."; break;
+		case 1: whatISay += "ダウナー系のゲームでごめんね。"; break;
+		case 2: whatISay += "それに、なにかをうまく解決するようなものでもない。"; break;
+		case 3: whatISay += "それに実のところ、嘘についてのゲームでもある。"; break;
 	}
 	N(whatISay);
 
@@ -166,7 +166,7 @@ function Play_3(){
 	Show("nicky","coffee_nicky_drink");
 	Show("cup",null);
 
-	p("Hey, I just said that!");
+	p("あ、それ俺が言ったヤツだ。");
 
 	// HACK - Just clear dialogue & stuff.
 	Wait(1000);
@@ -180,14 +180,14 @@ function Play_3(){
 	Show("nicky","coffee_nicky_still_2");
 	Wait(500);
 	
-	N("When you play...");
-	N("Choose your words wisely.");
-	N("Every character will remember everything you say. Or don't say.");
-	p("Yeah. You even brought up my choices in this MAIN MENU.");
-	N("Exactly.");
+	N("忠告しておくけど...");
+	N("言葉を慎重に選んでくれ。");
+	N("他のキャラクター達はみんな、君が言ったことをぜんぶ覚えている。言わなかったこともね。");
+	p("知ってるよ。まだゲームが始まってもいないのに、俺が言ったことを根にもって持ち出してきたもんな。");
+	N("その通り。");
 
 	N(". . .");
-	N("Some things are hard not to remember.");
+	N("忘れたくても忘れられないことってあるだろう。");
 	
 	Clear();
 	Start_Jack_1();
