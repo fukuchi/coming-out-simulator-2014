@@ -18,13 +18,13 @@ function Start_Jack_1(){
 
 	/////////////////////////////
 
-	j("And when he simply announces,");
-	j("'I bought the airline.'");
-	j("That was positively priceless!");
-	n("Is that what he said?");
-	n("I missed out what everyone in the theater was laughing about.");
-	j("You either need subtitles, or to clean your ears more often.");
-	j("So how did you interpret the ending?");
+	j("...それで彼はこう言ったんだ。");
+	j("「航空会社ごと買い取った」");
+	j("あれは本当に素晴しかったよ!");
+	n("そんなこと言ってたのか。");
+	n("映画館でみんなが笑ってたから聞き逃がしちゃったよ。");
+	j("今度は字幕つきで観るか、耳かきしてから観に来いよ。");
+	j("それで、あの終わり方はどう思う?");
 
 	Choose({
 		"It was totally all a dream.": Inception_Dream,
