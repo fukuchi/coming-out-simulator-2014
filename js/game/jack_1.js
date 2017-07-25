@@ -23,13 +23,13 @@ function Start_Jack_1(){
 	j("あれは本当に素晴しかったよ!");
 	n("そんなこと言ってたのか。");
 	n("映画館でみんなが笑ってたから聞き逃がしちゃったよ。");
-	j("今度は字幕つきで観るか、耳かきしてから観に来いよ。");
+	j("今度は字幕つきで観るか、耳かきしてから観に来るんだな。");
 	j("それで、あの終わり方はどう思う?");
 
 	Choose({
-		"It was totally all a dream.": Inception_Dream,
-		"He's got to be back in the real world!": Inception_Awake,
-		"Doesn't matter. Cobbs just finally let go.": Inception_Neither
+		"ぜんぶがただの夢だった。": Inception_Dream,
+		"主人公は現実世界に戻ってこれた!": Inception_Awake,
+		"どっちでもいいさ。ヤツは好きなようにするよ。": Inception_Neither
 	});
 
 }
@@ -39,30 +39,30 @@ function Inception_Dream(message){
 	$.inception_answer = "dream";
 
 	n(message);
-	j("So his entire redemption story was a lie?");
-	n("A big fat lie.");
-	j("You're a bit of a downer, aren't you?");
+	j("なら主人公の救済のストーリーは、ぜんぶ嘘だったということ?");
+	n("真っ赤なウソさ。");
+	j("お前、ちょっとダウナー系だよな?");
 
 	Choose({
-		"Yup, I'm just a sad sack of sadness.": Sadsack,
-		"Sometimes... but not when I'm with you.": function(message){
+		"そうさ、僕はどうしようもなく悲観的なんだ。": Sadsack,
+		"ときどきはね...でも君といるときは違うよ。": function(message){
 			$.im_a_poet = true;
 
 			n(message);
-			j("Ah Nicky, you amateur poet.");
-			n("Get me some french breads and wine,");
-			n("Coz that's got to be the cheesiest thing I've ever said.");
-			j("Apologize for nothing.");
-			n("Anywho...");
+			j("おおニッキー、詩人だねぇ。");
+			n("いい歯医者紹介してくれない?");
+			n("変なこと言っちゃったから歯が浮いてきたよ。");
+			j("ごめん、知らないよ。");
+			n("ま、それよりさ...");
 			Thanks();
 		},
-		"I'm just a realist.": function(message){
+		"ただリアリストなだけだよ。": function(message){
 			$.hippies = true;
 
 			n(message);
-			j("You need more positive thinking in your life.");
-			n("And YOU need to stop being such a new-age hippie.");
-			n("Anywho...");
+			j("もう少しポジティブな見方をした方がいいんじゃないか?");
+			n("それなら君はもうちょと現実を見た方がいいね。");
+			n("ま、それよりさ...");
 			Thanks();
 		}
 	});
