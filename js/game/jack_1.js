@@ -74,26 +74,27 @@ function Inception_Awake(message){
 	$.im_a_poet = true;
 
 	n(message);
-	n("Otherwise, the whole movie would've all just been a lie.");
-	n("What's the point of living a lie?");
-	j("Ah Nicky, you amateur poet.");
-	j("I take it you liked the film?");
+	n("そうじゃないと、ぜんぶがぜんぶ嘘だったことになっちゃうだろ。");
+	n("嘘だらけの人生に何の意味があるの?");
+	j("おおニッキー、詩人だねぇ。");
+	j("映画よかったと思う?");
 
 	Choose({
-		"Aw yiss. Yes I did.": function(message){
+		"うん、もちろん。": function(message){
 			n(message);
 			Thanks();
 		},
-		"Mehhh, it was a tad confusing at times.": function(message){
+		"うーん、ちょっと混乱したけどね。": function(message){
 			n(message);
-			j("I believe that was the purpose.");
-			n("Mission accomplished, then.");
-			n("Anywho...");
+			j("それこそがあの映画のテーマだよ。");
+			n("そうか、それならたっぷり堪能できたよ。");
+			n("ま、それよりさ...");
 			Thanks();
 		},
-		"BWOOOOOOOOOOONG": function(message){
+		"ブォーーーーーン": function(message){
 			n(message);
-			j("I'll interpret that as a yes.");
+			j("...なにかと思ったら、映画の中で何度も鳴ってたあの音か。");
+			j("イエス、の意味に受け取っておくよ。");
 			Thanks();
 		}
 	});
