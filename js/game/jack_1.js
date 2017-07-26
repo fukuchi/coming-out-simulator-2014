@@ -19,7 +19,7 @@ function Start_Jack_1(){
 	/////////////////////////////
 
 	j("...それで彼はこう言ったんだ。");
-	j("「航空会社ごと買い取った」");
+	j("「エアラインごと買い取った」");
 	j("あれは本当に素晴しかったよ!");
 	n("そんなこと言ってたのか。");
 	n("映画館でみんなが笑ってたから聞き逃がしちゃったよ。");
@@ -50,9 +50,9 @@ function Inception_Dream(message){
 
 			n(message);
 			j("おおニッキー、詩人だねぇ。");
-			n("いい歯医者紹介してくれない?");
-			n("変なこと言っちゃったから歯が浮いてきたよ。");
-			j("ごめん、知らないよ。");
+			n("マウスウォッシュあったらくれない?");
+			n("人生で一番クサいセリフ言っちゃったよ。");
+			j("残念ながら持ってないな。");
 			n("ま、それよりさ...");
 			Thanks();
 		},
@@ -93,7 +93,7 @@ function Inception_Awake(message){
 		},
 		"ブォーーーーーン": function(message){
 			n(message);
-			j("...なにかと思ったら、映画の中で何度も鳴ってたあの音か。");
+			j("予告編のマネかよ。");
 			j("イエス、の意味に受け取っておくよ。");
 			Thanks();
 		}
@@ -105,36 +105,36 @@ function Inception_Neither(message){
 	$.inception_answer = "neither";
 
 	n(message);
-	j("Oh?");
-	n("He didn't even bother looking to see if the top fell!");
-	n("Lies, truths, or half-truths... Cobbs no longer cares.");
-	n("He's finally happy, and that's all that matters.");
-	j("You either are being quite poetic, or quite depressing.");
+	j("ん?");
+	n("主人公は最後、コマが倒れるのかどうか、見もしなかった!");
+	n("嘘でも真実でも、それが曖昧だということさえ、コブはもう気にしないことにしたんだ。");
+	n("コブにとってはハッピーエンドだし、それで十分じゃないか。");
+	j("お前はすごいポエマーか、すごいダウナーかのどっちかだな。");
 
 	Choose({
-		"I'm a poet, and I didn't even know it.": function(message){
+		"僕はポエマーで、それに気付いてなかった。": function(message){
 
 			$.im_a_poet = true;
 
-			n("I'm a poet,");
-			n("and I wasn't even aware of the fact.");
-			j("You're a lyrical miracle, the evidence is empircal.");
-			n("That's hysterical.");
-			n("Anywho...");
+			n("僕は詩人さ。");
+			n("いままで考えもしなかったけどね。");
+			j("君は奇跡を歌う詩人、僕が認めるから持てよ自信。");
+			n("なんで突然踏む脚韻。");
+			n("ま、それよりさ...");
 			Thanks();
 
 		},
-		"Nah, I'm just a sad sack of sadness.": Sadsack,
-		"Or both.":function(message){
+		"まあね、僕はどうしようもなく悲観的なんだ。": Sadsack,
+		"あるいはその両方。":function(message){
 
 			$.hippies = true;
 			$.im_a_poet = true;
 
 			n(message);
-			n("POETRY IS PAIN. ART IS SUFFERING.");
-			j("You sound like my mother.");
-			n("Your parents are <i>such</i> new-age hippies.");
-			n("Anywho...");
+			n("詩は苦痛であり、芸術は苦悩である。");
+			j("うちの母さんみたいだ。");
+			n("君んとこの親は<strong>よほどの</strong>ニューエイジヒッピーなんだな。");
+			n("ま、それよりさ...");
 			Thanks();
 
 		}
@@ -147,9 +147,9 @@ function Sadsack(message){
 	$.sadsack = true;
 
 	n(message);
-	j("Aw, sorry to hear that.");
-	j("I hope our little date at the movies cheered you up?");
-	n("Sure did!");
+	j("ああ、ごめん変なこと言って。");
+	j("今日のデートで少しは元気出たかい?");
+	n("もちろん!");
 	Thanks();
 
 }
