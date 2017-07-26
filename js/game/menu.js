@@ -103,7 +103,7 @@ function Play(message){
 function Play_2(){
 
 	if(!$.asked_about){
-		N("君が「このゲームについて」を選んでいてくれたら、このゲームがとても個人的なストーリーについてのものだと、わかってもらえたんだけどね。");
+		N("君が「このゲームについて」を選んでいてくれたら、このゲームがとても個人的な物語を扱ったものだと、わかってもらえたんだけどね。");
 		p("チッ。");
 	}
 
@@ -113,7 +113,7 @@ function Play_2(){
 	N("今となってはね。");
 
 	Choose({
-		"そんなグチャグチャでうまくいくの?": function(message){
+		"そんなんでちゃんとクリアできるの?": function(message){
 			$.main_menu_convo_2 = 2;
 
 			p(message);
@@ -152,13 +152,13 @@ function Play_3(){
 	var whatISay;
 	switch($.main_menu_convo_1){
 		case 1: whatISay = "このゲームはゲイのユニコーンなんかで終わりはしない。"; break;
-		case 2: whatISay = "このゲームはカミングアウトについてのものであり、成長についてのものであり、人生に折り合いをつけることについてのものでもある。"; break;
+		case 2: whatISay = "このゲームはカミングアウト、大人になること、そして人生に折り合いをつけること、について語っている。"; break;
 		case 3: whatISay = "このゲームは流血沙汰で終わったりはしない。涙は流れるだろうけど。"; break;
 	}
 	switch($.main_menu_convo_2){
-		case 1: whatISay += "ダウナー系のゲームでごめんね。"; break;
-		case 2: whatISay += "それに、なにかをうまく解決するようなものでもない。"; break;
-		case 3: whatISay += "それに実のところ、嘘についてのゲームでもある。"; break;
+		case 1: whatISay += "悪いけどダウナー系のゲームだ。"; break;
+		case 2: whatISay += "そして、ちゃんとクリアすることを目指すようなものでもない。"; break;
+		case 3: whatISay += "そして実のところ、嘘についてのゲームでもある。"; break;
 	}
 	N(whatISay);
 
@@ -237,7 +237,7 @@ function Credits(message){
 	}else{
 		Choose({
 			"よくわかったから、プレイしてもいい?": Play,
-			"なぜこのゲームを作ったの? (このゲームについて)": function(){
+			"なぜこれを作ったの? (このゲームについて)": function(){
 				About("なぜこのゲームを作ったの?");
 			}
 		});
