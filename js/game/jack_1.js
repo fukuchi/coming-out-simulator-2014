@@ -61,7 +61,7 @@ function Inception_Dream(message){
 
 			n(message);
 			j("もう少しポジティブな見方をした方がいいんじゃないか?");
-			n("それなら君はもうちょと現実を見た方がいいね。");
+			n("なら君はニューエイジヒッピーをやめて現実を見た方がいいね。");
 			n("ま、それよりさ...");
 			Thanks();
 		}
@@ -156,37 +156,37 @@ function Sadsack(message){
 
 function Thanks(){
 	
-	n("So yeah! Thanks for taking me out to watch Inception!");
-	j("My pleasure, Nicky.");
-	j("You should parody Inception in that odd web game of yours!");
-	n("Mmm, maybe maybe.");
-	n("Let's meet again tomorrow evening!");
+	n("あのさ! 「インセプション」に連れてってくれてありがとう!");
+	j("どういたしまして、ニッキー。");
+	j("そのうち「インセプション」をパロった変な Web ゲーム作ればいいんじゃない?");
+	n("あー、はいはい。");
+	n("明日午後にまた会おうよ!");
 
-	j("Although...");
-	n("Hope I can convince the parents to let me out overnight.");
+	j("それなんだけど...");
+	n("うちの親が外泊させてくれると本当はいいんだけど。");
 
-	j("I wish you didn't tell your mom and dad we were just studying, when we were actually at the cinema.");
-	n("I'll pretend we'll be cramming for the midterms all nigh-- huh?");
+	j("君は親に、僕らは勉強してたと嘘をついていたんじゃないのかい。本当は映画に行ってたのに。");
+	n("中間試験前の一夜漬けを二人でするからとか言ってさ——えっ?");
 
-	j("You can't keep hiding like this.");
-	n("Jack...");
+	j("こんな風に隠し続けることはできないよ。");
+	n("ジャック...");
 
 	Choose({
-		"They can never, ever know.": function(message){
+		"親には絶対に、絶対に言わないよ。": function(message){
 			$.coming_out_readiness="no";
 			n(message);
-			j("Really, never?");
+			j("絶対に? なんで?");
 			Hiding();
 		},
-		"I wish I could tell them, too.": function(message){
+		"そりゃもちろん本当のことを言えればいいさ。": function(message){
 			$.coming_out_readiness="yes";
 			n(message);
 			Hiding();
 		},
-		"I'm not ready to tell them yet.": function(message){
+		"まだ心の準備ができていないんだ。": function(message){
 			$.coming_out_readiness="maybe";
 			n(message);
-			j("I can help you be ready.");
+			j("なら一緒に準備をしよう。僕がついているさ。");
 			Hiding();
 		}
 	});
@@ -195,40 +195,40 @@ function Thanks(){
 
 function Hiding(){
 
-	j("Nicky, hiding like this is eating away at your soul.");
+	j("ニッキー、本当のことを隠し続けることは、君の魂を蝕んでいくんだ。");
 
 	if($.inception_answer=="awake"){
-		j("Like you said, what's the point of living a lie?");
+		j("君、言っただろ。嘘だらけの人生に何の意味があるの?");
 	}
 	if($.inception_answer=="dream"){
-		j("It's... how'd you put it... 'a big fat lie'?");
+		j("それは... 君言っただろ... 「真っ赤なウソ」?");
 	}
 
 	if($.sadsack){
-		j("When you said just now you're a sadsack?");
-		j("I know you weren't joking. Not really.");
+		j("それに自分の事を、どうしようもなく悲観的、とも言ってたね。");
+		j("冗談めかして言ってたけど違うね。僕には分かるんだ。");
 	}
 
-	n("Jack, come on.");
-	j("I came out to my parents last year.");
+	n("ジャック、ちょっと待って。");
+	j("僕は去年、自分の親にカミングアウトした。");
 	if($.hippies){
-		n("That's NOT a fair comparison.");
-		n("LIKE I SAID, you and your parents are a bunch of new-age hippies.");
-		n("When I'm at your place, I can't tell if all the smoke is incense or marijuana.");
-		j("Hey! We only smoke weed every other day!");
-		n("Heh.");
-		j("The point is, my parents supported my coming out.");
+		n("そうやって僕と比べるのはズルいよ。");
+		n("さっきも言ったけど、君も親もニューエイジのヒッピーじゃないか。");
+		n("家中が煙だらけだったけど、お香じゃなくてマリファナなんだろ。");
+		j("おい! うちは二日にいっぺんしかクサはやらないよ!");
+		n("どうだか。");
+		j("そうじゃなくて、うちの親は僕のカミングアウトを理解してくれたってことなんだよ。");
 	}else{
-		j("And they were very supportive!");
+		j("親は理解してくれたよ。");
 	}
 
-	j("You're in Canada now. A lot of people here are LGBT friendly.");
-	j("How do you know your parents won't be supportive of you, too?");
+	j("君はいまカナダに住んでいるんだ。LGBTに理解ある人達が沢山いるだろう。");
+	j("君の親が理解してくれるかどうか、まだ確かめた訳じゃないんだろう?");
 
 	Choose({
-		"Asian parents are usually very homophobic.": Hiding_2,
-		"I don't know... I guess I haven't tried...": Hiding_2,
-		"They don't support anything but STUDYING.": Hiding_2
+		"アジア系の親世代ってのはだいたいホモ嫌いなんだよ。": Hiding_2,
+		"うんまあ... 聞いたことなかったと思うけど...": Hiding_2,
+		"うちの親は勉強のこと以外なんにも理解してくれはしないよ。": Hiding_2
 	});
 
 }
