@@ -226,9 +226,9 @@ function Hiding(){
 	j("君の親が理解してくれるかどうか、まだ確かめた訳じゃないんだろう?");
 
 	Choose({
-		"アジア系の親世代ってのはだいたいホモ嫌いなんだよ。": Hiding_2,
+		"アジア系の親ってのはだいたいホモ嫌いなんだよ。": Hiding_2,
 		"うんまあ... 聞いたことなかったと思うけど...": Hiding_2,
-		"うちの親は勉強のこと以外なんにも理解してくれはしないよ。": Hiding_2
+		"うちの親は勉強のこと以外、何も理解してくれないよ。": Hiding_2
 	});
 
 }
@@ -238,36 +238,36 @@ function Hiding_2(message){
 	n(message);
 
 	if($.coming_out_readiness=="no"){
-		n("Again... They can never, ever know.");
+		n("だから... 絶対に、絶対に言わないよ。");
 	}
 
-	j("You have trust issues.");
-	j("You're even texting me instead of calling...");
-	j("...because you think your parents might listen in.");
+	j("君は親のことを信頼していないんだな。");
+	j("いまだって、電話じゃなくてメール使ってるのは...");
+	j("...親に聞かれるかもしれないと思ってるんだろ。");
 
-	n("They would!");
+	n("だってそうだろ!");
 
-	j("This mode of communication.");
-	j("It's imprecise, impersonal, impossible to truly connect.");
+	j("こんなやり方じゃダメだ。");
+	j("本当に理解しあうには、こんなのは不正確で、不実で、不可能だ。");
 
 	if($.im_a_poet){
-		n("Heh. You're an amateur poet like me, apparently.");
+		n("へぇ、どうやら君も僕みたいに詩人だったんだな。");
 	}else{
-		n("It's not too bad...");
+		n("そこまでひどくないよ...");
 	}
 
 	if($.coming_out_readiness=="yes"){
-		j("You yourself just said you wish you could tell them.");
-		j("Tell them.");
+		j("「本当のことを言えればいい」と言ってただろ。");
+		j("言っちゃいなよ。");
 	}else{
-		j("Nicky.");
+		j("ニッキー。");
 	}
-	j("Tell them about us. Tonight.");
+	j("親に伝えるんだ。今夜。");
 
 	Choose({
-		"Tonight?! Heck no.": Hiding_3,
-		"Sigh... I'll try my best.": Hiding_3,
-		"I'll just carefully hint at it.": Hiding_3
+		"今夜?! 無茶言うなよ。": Hiding_3,
+		"うん... やってみるよ。": Hiding_3,
+		"ちょっと探りを入れてみるくらいなら...": Hiding_3
 	});
 
 }
@@ -276,35 +276,35 @@ function Hiding_3(message){
 	
 	n(message);
 	j(". . .");
-	n("I don't want to freak them out too much.");
-	n("Still need to convince them to let me stay at your place tomorrow night.");
-	n("I'll tell 'em I'm studying with you again.");
+	n("親をあんまりパニくらせたくないんだ。");
+	n("明日の夜に君の家に行くことを納得させるには、");
+	n("一緒に勉強しに行く、って言った方がいいんだよ。");
 	j(". . .");
-	n("It's dinnertime. I'm heading downstairs now.");
+	n("晩御飯の時間だ。もう下に行くよ。");
 
-	j("Hey... I agree.");
-	n("Huh?");
-	j("With your thoughts on the movie ending, that is.");
+	j("なぁ... お前の言う通りだ。");
+	n("ん?");
+	j("あの映画の終わり方について、さ。");
 	switch($.inception_answer){
-		case "dream": j("I think Cobbs was still dreaming, living a lie."); break;
-		case "awake": j("I think Cobbs reconnected with his real family, in the real world."); break;
-		case "neither": j("I think it doesn't matter, as long as Cobbs is happy."); break;
+		case "dream": j("主人公は真っ赤なウソ、夢の中に囚われているんだ。"); break;
+		case "awake": j("主人公は現実に戻ってきて、現実の家族と再会したんだ。"); break;
+		case "neither": j("主人公が幸せなら、真実はどっちでもいいんだ。"); break;
 	}
-	n("Oh.");
-	j("Okay.");
+	n("ああ。");
+	j("よし。");
 	if($.coming_out_readiness=="maybe"){
-		j("Hope you changed your mind about being 'not ready to tell them yet'.");
+		j("心の準備がまだなら、はやく準備ができるといいな。");
 	}
-	j("Good luck. Text me in an hour.");
+	j("うまくいくといいな。またメールくれよ。");
 
 	var insult = "";
-	if($.hippies) insult+=" new-age hippie";
-	if($.im_a_poet) insult+=" amateur poet";
-	n("See ya.");
+	if($.hippies) insult+="ニューエイジヒッピー";
+	if($.im_a_poet) insult+="詩人";
+	n("じゃあね。");
 	if(insult!=""){
-		n("You"+insult+".");
+		n(insult+"さん。");
 	}else{
-		n("You goof.");
+		n("お馬鹿さん。");
 	}
 
 	Jack_1_End();
