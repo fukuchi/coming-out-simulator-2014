@@ -299,8 +299,8 @@ function Plot_Twist_2(){
 	m("Before dinner. I was in your room.");
 
 	// Dinner_1
-	m("You yelled out '"+$.what_you_called_out+"' from downstairs, while I unlocked your phone...");
-	m("And read what you and Jack have been sending to each other.");
+	m("あなたが「"+$.what_you_called_out+"」って叫んでたとき、お母さんはあなたの電話のロックを外したの...");
+	m("それで、あなたとジャックが何を話してたのか、全部読んだわ。");
 	m("I'm your mother. I have the right.");
 
 	n(". . .");

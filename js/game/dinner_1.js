@@ -15,13 +15,13 @@ function Start_Dinner_1(){
 	////////////////////////////
 
 	Wait(2500);
-	n("Where is everyone?...");
+	n("みんなどこ?...");
 	n(". . .");
 
 	Choose({
-		"Moooom?": Waiting_1,
-		"Daaaaad?": Waiting_1,
-		"Hello, anybody?": Waiting_1
+		"母さん?": Waiting_1,
+		"父さん?": Waiting_1,
+		"もしもーし?": Waiting_1
 	});
 
 }
@@ -34,15 +34,15 @@ function Waiting_1(message){
 	n(". . .");
 
 	Choose({
-		"[start eating]": function(message){
+		"[食べ始める]": function(message){
 			$.waiting_action = "eat";
 			Waiting_2(message);
 		},
-		"[wait some more]": function(message){
+		"[もうちょっと待つ]": function(message){
 			$.waiting_action = "wait";
 			Waiting_2(message);
 		},
-		"[play with food]": function(message){
+		"[ご飯をつついて遊ぶ]": function(message){
 			$.waiting_action = "play";
 			Waiting_2(message);
 		}
