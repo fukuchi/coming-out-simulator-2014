@@ -10,7 +10,11 @@ function Start(){
 
 	PlaySound("bg","coffeehouse",{loop:-1, volume:0.7});
 
+	Clear();
+	Start_Dinner_1();
+	
 	//////////////////////////////
+	/*
 
 	N("<b>COMING OUT SIMULATOR 2014</b>");
 	N("「半分の真実」についての、半分本当のゲーム。");
@@ -26,7 +30,7 @@ function Start(){
 			About("もうちょい詳しく。");
 		}
 	});
-
+*/
 }
 
 function SipCoffee(message){
@@ -221,7 +225,7 @@ function Credits(message){
 		p("ぜんぶ自分で??");
 		p("前にも言ったけど、君さぁ...");
 		p("かなりのナルシストだよ。");
-		N("あ、本当にぜんぶを自分でって訳じゃないんだ。");
+		N("あ、本当にぜんぶを自分でってわけじゃないんだ。");
 		N("効果音はいろんな無料素材を使っている。");
 	}else{
 		N("もっとも効果音はいろんな無料素材を使っている。");

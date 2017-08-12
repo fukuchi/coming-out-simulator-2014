@@ -64,7 +64,7 @@ function Waiting_2(message){
 	Show("nicky","dinner_nicky_defiant");
 
 	Choose({
-		"Cut the crying, cacophonous cat clock!": function(message){
+		"ニャアニャア鳴くな、汝、猫時計よ。": function(message){
 			n(message);
 
 			Show("mom","mom_stand");
@@ -72,47 +72,47 @@ function Waiting_2(message){
 			PlaySound("clock","dinner_ticking",{loop:-1});
 
 			if($.im_a_poet){
-				m("Did you learn poetry from a friend?");
+				m("あなた、お友達のところで詩でも習ってきたの?");
 			}else{
-				m("Poetic.");
+				m("あら、それ詩なの?");
 			}
 
 			Show("nicky","dinner_nicky_sit");
-			n("Oh, hey mom.");
+			n("あ、母さん。");
 			
 			Waiting_End();
 		},
-		"Ugh, why did we get that thing?": function(message){
+		"ああもう、なんでこんなのがウチにあるんだよ?": function(message){
 			n(message);
 
 			Show("mom","mom_stand");
 			Show("clock","clock_ticking");
 			PlaySound("clock","dinner_ticking",{loop:-1});
 
-			m("Your grandfather gave it to us.");
+			m("あなたのお爺さんがくださったのよ。");
 
 			Show("nicky","dinner_nicky_sit");
-			n("Oh! Hey mom.");
+			n("あっ、母さん。");
 			
 			Waiting_End();
 		},
-		"Meow! Meow! Meow! Meow!": function(message){
+		"ニャア! ニャア! ニャア!": function(message){
 			
-			n("Meow.");
-			n("Meow!");
+			n("ニャア。");
+			n("ニャア!");
 
 			Show("nicky","dinner_nicky_outrage");
-			n("MEOW!");
+			n("ニャアーッ!");
 
 			Show("mom","mom_stand");
 
-			m("Nick, what are you doing?...");
+			m("ニック、なにしてるの?...");
 
 			Show("clock","clock_ticking");
 			PlaySound("clock","dinner_ticking",{loop:-1});
 			Show("nicky","dinner_nicky_sit");
 
-			n("MEOOOhhhh didn't see you. Ahem. Hey mom.");
+			n("ニャアー…んと、いたのか、母さん。");
 
 			Waiting_End();
 		}

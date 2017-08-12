@@ -5,48 +5,48 @@
 
 function Start_Dinner_2(){
 
-	m("Hi sweetie.");
+	m("おまたせ。");
 	Show("mom","mom_sit");
 
 	switch($.waiting_action){
 		case "eat":
-			m("Oh, you started eating without me. You're very impatient.");
-			n("...right.");
+			m("あら、もう先に食べてたの? せっかちねぇ。");
+			n("...まあね。");
 			break;
 		case "wait":
-			m("You could have started without me. No need to let your food get cold.");
-			n("...sure.");
+			m("先に食べてても良かったのに。ご飯冷めちゃうわよ。");
+			n("...わかった。");
 			break;
 		case "play":
-			m("It's immature to play with your food, you know.");
-			n("Yeah, yeah.");
+			m("ちょっと、食べ物で遊ぶなんて。子供じゃないんだから。");
+			n("はいはい。");
 			break;
 	}
 
-	m("Your father's running late. He'll be joining us for dinner in an hour's time.");
+	m("お父さん遅くなるって。一時間ほどで帰ってくるそうよ。");
 
 	Choose({
-		"Cool. Let's eat.": function(message){
+		"いいんじゃない。じゃあいただきます。": function(message){
 			n(message);
-			n("*nom nom nom*");
+			n("（モグモグ）");
 			m(". . .");
-			m("What's your plans for tomorrow?");
+			m("明日はどうするの?");
 			Start_Dinner_2_1();
 		},
-		"I have something to tell both of you.": function(message){
+		"二人に話したいことがあるんだけど。": function(message){
 			n(message);
-			m("Alright. Tell us both later when he comes back.");
-			n("Oh. Okay.");
+			m("いいわ、お父さんが帰ってきたら話してちょうだい。");
+			n("そっか、そうだね。");
 			m(". . .");
-			n("*nom nom nom*");
-			m("So, what's your plans for tomorrow?");
+			n("（モグモグ）");
+			m("それで、明日はどうするの?");
 			Start_Dinner_2_1();
 		},
-		"There's something I need to tell just you first.": function(message){
+		"まず母さんに話したいことがあるんだけど。": function(message){
 			n(message);
-			m("Hold on Nick, I haven't asked about your day yet!");
-			n("Today was fine.");
-			m("Okay. And what's your plans for tomorrow?");
+			m("慌てないでニック。今日なにがあったか先に教えてちょうだい。");
+			n("別になにも。");
+			m("そう。じゃあ明日はどうするの?");
 			Start_Dinner_2_1();
 		}
 	});
@@ -55,22 +55,22 @@ function Start_Dinner_2(){
 
 function Start_Dinner_2_1(){
 
-	n("Oh. Uh... studying.")
-	n("Yeah. Tomorrow I'm studying.");
-	m("What subject?");
-	n("Er...");
+	n("ああ、えーと、勉強。")
+	n("うん、明日は勉強するよ。");
+	m("何の勉強?");
+	n("その...");
 
 	Choose({
-		"Chemistry.": function(message){
-			$.studying_subject = "Chemistry";
+		"化学。": function(message){
+			$.studying_subject = "化学";
 			Start_Dinner_2_2(message);
 		},
-		"Calculus.": function(message){
-			$.studying_subject = "Calculus";
+		"微積分。": function(message){
+			$.studying_subject = "微積分";
 			Start_Dinner_2_2(message);
 		},
-		"Compsci.": function(message){
-			$.studying_subject = "Computer Science";
+		"計算機科学。": function(message){
+			$.studying_subject = "計算機科学";
 			Start_Dinner_2_2(message);
 		}
 	});
@@ -80,36 +80,36 @@ function Start_Dinner_2_1(){
 function Start_Dinner_2_2(message){
 
 	n(message);
-	m("Good.");
-	m("You really, really could improve your grades in your "+$.studying_subject+" class.");
+	m("いいわね。");
+	m($.studying_subject+"の成績、うんと良くなるといいんだけど。");
 	n(". . .");
-	m("So, I'll be at the library tomorrow.");
-	m("Will I see you studying there?");
-	n("Actually, I'm gonna study at Jack's place.");
-	m("Again?");
-	m("You spend a lot of time with him.");
+	m("お母さん、明日は図書館に用があるんだけど、");
+	m("そこであなたに会えるかしら?");
+	n("いや、それが...ジャックのところで勉強するんだ。");
+	m("また?");
+	m("いっつもジャックと一緒にいるのね。");
 
 	Choose({
-		"We just study together, that's all.": function(message){
+		"ただ勉強してるだけだよ。": function(message){
 			$.relationship = "study";
 			Buddy_1(message);
 		},
-		"Mom, Jack is... more than a friend.": function(message){
+		"ジャックは友達なだけじゃないんだよ。": function(message){
 			
 			$.relationship = "best friend";
-			n(message);
+			n("母さん、ジャックはその...友達なだけじゃないんだよ。");
 			
 			$.lying_about_hanging_out = true;
-			m("Oh, like best friends?");
-			n("Um. Well--");
-			m("So you're just hanging out, not studying.");
-			n("We ARE studying!");
+			m("あら、親友ってこと?");
+			n("んーと、つまり...");
+			m("勉強しないで二人でぶらぶらしてるんじゃないの。");
+			n("ちゃんと勉強してるって!");
 			m(". . .");
 			m("Alright, just don't lie to me.");
-			n("I'm not.");
+			n("嘘じゃないよ。");
 			Buddy_1_point_5();
 		},
-		"Well yeah, that's what good pals do.": function(message){
+		"まあ、いい友達だからね。": function(message){
 			$.relationship = "friend";
 			Buddy_1(message);
 		}
