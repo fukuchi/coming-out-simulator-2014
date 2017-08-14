@@ -10,11 +10,7 @@ function Start(){
 
 	PlaySound("bg","coffeehouse",{loop:-1, volume:0.7});
 
-	Clear();
-	Start_Dinner_1();
-	
 	//////////////////////////////
-	/*
 
 	N("<b>COMING OUT SIMULATOR 2014</b>");
 	N("「半分の真実」についての、半分本当のゲーム。");
@@ -30,7 +26,7 @@ function Start(){
 			About("もうちょい詳しく。");
 		}
 	});
-*/
+
 }
 
 function SipCoffee(message){
