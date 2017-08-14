@@ -105,7 +105,7 @@ function Start_Dinner_2_2(message){
 			m("勉強しないで二人でぶらぶらしてるんじゃないの。");
 			n("ちゃんと勉強してるって!");
 			m(". . .");
-			m("Alright, just don't lie to me.");
+			m("わかったわ、嘘じゃないのね。");
 			n("嘘じゃないよ。");
 			Buddy_1_point_5();
 		},
@@ -128,14 +128,14 @@ function Buddy_1(message){
 
 	if($.relationship!="study"){
 		$.lying_about_hanging_out = true;
-		m("Oh. So you're just hanging out, not studying.");
-		n("We ARE studying!");
+		m("勉強しないで二人でぶらぶらしてるんじゃないの。");
+		n("ちゃんと勉強してるって!");
 		m(". . .");
-		m("Alright, just don't lie to me.");
-		n("I'm not.");
+		m("わかったわ、嘘じゃないのね。");
+		n("嘘じゃないよ。");
 	}else{
-		m("Okay. I'm just making sure.");
-		n("Of... what?");
+		m("そう、やっぱりね。");
+		n("やっぱりって...なにが?");
 	}
 
 	Buddy_1_point_5();
@@ -143,64 +143,64 @@ function Buddy_1(message){
 
 function Buddy_Caught_Lying_1(message,callback){
 	n(message);
-	m("Wait...");
-	m("I thought you said you 'just study together'.");
-	m("You didn't tell me you were friends.");
+	m("あら...");
+	m("「ただ勉強してるだけ」って言ってたじゃない。");
+	m("友達だなんて初めて聞いたわ。");
 	$.lying_about_relationship = true;
 	Choose({
-		"Oops, I meant he's just a studymate.": callback,
-		"Well, he can also be my friend...": callback,
-		"No, I always said we were friends.": callback
+		"あ、いや、ただの勉強仲間ってことだよ。": callback,
+		"だから、友達でもあるんだって...": callback,
+		"そんなことないよ、友達だって前から言ってたよ。": callback
 	});
 }
 
 function Buddy_1_point_5(){
 
-	m("Just... don't hang around him too much.");
-	m("People might get the wrong idea.");
+	m("あのね...ジャックとあんまり一緒にいないで欲しいの。");
+	m("みんなが勘違いするかもしれないし。");
 
 	Choose({
-		"Oh. No, yeah, we're just friends.": function(message){
+		"ちょっと、アイツはただの友達だって。": function(message){
 			if($.relationship=="study" && !$.lying_about_relationship){
 				Buddy_Caught_Lying_1(message,Buddy_2);
 			}else{
 				Buddy_2(message);
 			}
 		},
-		"The wrong idea might be the right idea.": Buddy_4,
-		"What do you mean by... wrong idea?": Buddy_3
+		"勘違いじゃないかもしれないよ。": Buddy_4,
+		"勘違いって...どういうこと?": Buddy_3
 	});
 
 }
 
 function Buddy_2(message){
 	n(message);
-	m("Okay.");
+	m("そう。");
 	if($.lying_about_relationship){
-		m("Just don't lie to me.");
-		n("I won't.");
+		m("嘘じゃないでしょうね。");
+		n("違うって。");
 		m(". . .");
-		m("But... about you hanging out with Jack.");
+		m("でも...ジャックと遊んでるんでしょう。");
 	}
-	m("It's just that some people might assume things, since...");
-	m("You know... he looks like...");
-	m("A gay?");
+	m("誰かがそう思うかもしれないってことよ。つまり...");
+	m("彼はその...ほら...");
+	m("ゲイみたいでしょう?");
 	Buddy_Choice();
 }
 
 function Buddy_3(message){
 	n(message);
-	m("Just between mother and son, I think he might be... you know...");
-	n("No, what?");
-	m("A gay!");
-	m("He looks and talks like a gay.");
+	m("ここだけの話だけど、彼はその...ほら...");
+	n("なんだよ?");
+	m("ゲイだってことよ!");
+	m("見た目とか喋り方とか、いかにもゲイっぽいじゃない。");
 	Buddy_Choice();
 }
 
 function Buddy_4(message){
 	n(message);
-	m("Oh, that's like a zen thing, right?");
-	n("Um.");
+	m("あら、なんだか禅問答みたいね。");
+	n("んー");
 	m("Zen is also about nature, and your classmate Jack, he...");
 	m("...you know, doesn't seem natural?");
 	Choose({
