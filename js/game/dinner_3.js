@@ -7,12 +7,12 @@
 
 function Start_Dinner_3(){
 
-	n("Mom.");
+	n("母さん。");
 
 	Choose({
-		"That's why I'm studying more with Jack.": Tutor,
-		"Look, I'm trying. I really am.": Tutor,
-		"My grades are fine.": Tutor
+		"だからジャックと必死に勉強してるんだよ。": Tutor,
+		"努力はしてるんだよ。本当だって。": Tutor,
+		"そんなにひどくないって。": Tutor
 	});
 
 }
@@ -20,73 +20,73 @@ function Start_Dinner_3(){
 function Tutor(message){
 
 	n(message);
-	m("I'm worried for you. Jack's not a good influence.");
+	m("私はあなたのためを思ってるのよ。ジャックと一緒にいるのはあなたのためにならないわ。");
 
 	if($.hippies){
-		m("I think his parents might even be drug addicts...");
-		n("What makes you say th--");
+		m("ジャックのご両親はよくない薬をやってるそうだし...");
+		n("なんでそんなことを—");
 	}else if($.im_a_poet){
-		m("All he does is do poetry.");
-		n("What makes you say th--");
+		m("ジャックはちょっと夢想的すぎるわ。");
+		n("なんでそんなことを—");
 	}
 	
-	m("I'm getting you a home tutor.");
-	n("...what?");
+	m("実は家庭教師を頼んでいるのよ。");
+	n("...は?");
 
 	if($.studying_subject!=$.studying_subject_2){
-		m("She'll be tutoring you in "+$.studying_subject+" and "+$.studying_subject_2+".");
+		m("その子が"+$.studying_subject+"と"+$.studying_subject_2+"を教えてくれるの。");
 	}else{
-		m("She'll be tutoring you in "+$.studying_subject+".");
+		m("その子が"+$.studying_subject+"を教えてくれるの。");
 	}
 
-	m("Her name is Claire. She's smart, pretty, and Caucasian. She's your age, too.");
+	m("名前はクレアっていうの。頭はいいし、可愛いくて、白人の娘よ。それに同い歳だし。");
 
 	Choose({
-		"Are you trying to stop me from seeing Jack?": Tutor_Seeing,
-		"Are you trying to matchmake me with her?": Tutor_Matchmake,
-		"Can we talk about tutors another time?": Tutor_Forget
+		"それってジャックと付き合うなっていうこと?": Tutor_Seeing,
+		"そいつと付き合えっていうの?": Tutor_Matchmake,
+		"家庭教師の話は後にしない?": Tutor_Forget
 	});
 
 }
 
 function Tutor_Seeing(message){
 	n(message);
-	m("I'm sorry, <i>seeing</i> Jack?");
-	m("Be careful how you say that. You make it sound like...");
+	m("いま、ジャックと「付き合う」って言った?");
+	m("言い方に気をつけなさい。それじゃまるで...");
 	
 	Choose({
-		"Like we're dating? Yeah. We are.": function(message){
+		"デートでもしてるみたいだって? そうだよ。": function(message){
 			n(message);
 			m(". . .");
 			n(". . .");
-			n("...Hello?");
+			n("...もしもし?");
 			m(". . .");
-			n("Anyone there?");
+			n("誰かいますかー?");
 			m(". . .");
 			Threat_School();
 		},
-		"I just meant meeting Jack.": function(message){
+		"「会う」って言いたかっただけだって。": function(message){
 			n(message);
-			m("Okay. Just being clear about some things.");
-			n("Yeah.");
+			m("いいわ、そこのところははっきりしてちょうだい。");
+			n("わかった。");
 			m(". . .");
-			m("Claire's really cute.");
-			n("Sure.");
-			m("She has perky breasts.");
+			m("クレアはとても可愛いのよ。");
+			n("そう。");
+			m("それに胸も大きいのよ。");
 			Threat_Tutor();
 		},
-		"We're. Not. Boyfriends.": function(message){
+		"違う違う、ただの友達。": function(message){
 			n(message);
 			m(". . .");
-			m("Okay.");
-			m("I never said you were, but... okay.");
-			n("We're friends.");
+			m("そう。");
+			m("別に疑ってる訳じゃないんけど...まぁいいわ。");
+			n("友達だから。");
 
 			if($.relationship=="friend"){
-				m("\"Good pals\"...");
+				m("「いい友達」...");
 			}
 			if($.relationship=="best friend"){
-				m("\"BEST friends\"...");
+				m("「親友」...");
 			}
 
 			Threat_Tutor();
@@ -97,42 +97,42 @@ function Tutor_Seeing(message){
 
 function Tutor_Matchmake(message){
 	n(message);
-	m("Well, if that's what you want, I could!");
-	n("nooooo.");
-	m("Don't be shy! You're growing up to be a man.");
-	m("And you're going to give me lots of grandkids.");
+	m("あら、そうしたいならもちろん応援するわよ!");
+	n("そうじゃないって。");
+	m("あら、恥かしがらなくてもいいのよ! いっちょまえの男になりたくないの?");
+	m("孫の顔が早く見たいわ、私。");
 
 	Choose({
-		"Stop it! I haven't even met Claire yet!": function(message){
+		"やめてよ! まだ会ったこともないんだから!": function(message){
 			n(message);
-			m("Yet!");
-			m("She's coming over tomorrow!");
-			n("What? But I promised Jack--");
-			m("I ironed your best clothes. You'll make a good first impression.");
+			m("すぐに会えるわよ!");
+			m("明日うちに来るのよ!");
+			n("はぁ? 明日はジャックと約束が—");
+			m("あなたの服ちゃんとアイロンかけといたわよ。第一印象って大事だから。");
 			Threat_Tutor();
 		},
-		"The odds of that are 50-50, coz I'm bi.": function(message){
+		"可能性は半々ってところかな。僕バイだし。": function(message){
 
 			$.admit_bisexuality = true;
 
 			n(message);
-			m("Um. Bi?...");
+			m("え、バイ?...");
 
 			Show("nicky","dinner_nicky_defiant");
 
-			n("Yes. As in BISEXUAL.");
-			n("As in I AM SEXUALLY ATTRACTED TO BOTH MEN AND WOMEN.");
+			n("そう、バイセクシャル。");
+			n("つまり、男にも女にも性的興味を持つ人のこと。");
 			m(". . .");
 			n(". . .");
 			Threat_School();
 		},
-		"No. I don't ever want to have kids.": function(message){
+		"いや、子供なんて欲しくないよ。": function(message){
 			n(message);
-			m("You'll change your mind when you grow up.");
-			m("Raising a child is wonderful. Your children will look up to you!");
-			n("...of course, you narcissist.");
-			m("Excuse me?");
-			n("Nothing.");
+			m("そんなの、大きくなれば考えも変わるわよ。");
+			m("子供を育てるってのは素敵なことよ。あなたも子供に尊敬されるようになるわ!");
+			n("...ナルシストだね。");
+			m("どうゆうこと?");
+			n("別に。");
 			m(". . .");
 			Threat_Tutor();
 		}
@@ -141,41 +141,41 @@ function Tutor_Matchmake(message){
 
 function Tutor_Forget(message){
 	n(message);
-	m("No, because I've already scheduled Claire to come over tomorrow.");
-	n("What?!");
-	n("No. I promised to study with Jack tomorrow.");
+	m("だめよ、クレアには明日来てもらうようにもうお願いしてるもの。");
+	n("はぁ?!");
+	n("だめだって。明日はジャックと約束してるんだよ。");
 	m(". . .");
-	m("How long did you want to stay over at his place?");
+	m("ジャックとの用事はいつまでかかるの?");
 
 	Choose({
-		"Overnight.": function(message){
+		"一晩中。": function(message){
 			n(message);
 			m(". . .");
 			n(". . .");
-			n("...Hello?");
-			n("It's not weird. Friends have sleepovers all the time.");
+			n("...もしもし?");
+			n("そんな変なことじゃいあよ、友達のところに泊まりがけでいくなんてよくあることだろ。");
 			m(". . .");
 			Threat_School();
 		},
-		"Just the afternoon.": function(message){
+		"夕方まで。": function(message){
 			n(message);
 			if($.lying_about_hanging_out){
-				m("I knew it. I caught your lie earlier.");
-				n("Huh?");
+				m("やっぱり。嘘だってわかってたわ。");
+				n("は?");
 			}else{
-				m("...I knew it.");
+				m("...やっぱり。");
 			}
-			m("You're just hanging out with him.");
+			m("ジャックと遊びたいだけじゃない。");
 			Threat_Tutor();
 		},
-		"Maybe an hour or so.": function(message){
+		"一時間かそこら。": function(message){
 			n(message);
-			m("That's not enough to really get studying done.");
+			m("一時間で勉強できる訳ないじゃない。");
 			if($.lying_about_hanging_out){
-				m("I knew it. I caught your lie earlier.");
-				n("Huh?");
+				m("やっぱり。嘘だってわかってたわ。");
+				n("は?");
 			}
-			m("You're just hanging out with him.");
+			m("ジャックと遊びたいだけじゃない。");
 			Threat_Tutor();
 		}
 	});
@@ -186,35 +186,35 @@ function Threat_Tutor(){
 	Show("nicky","dinner_nicky_defiant");
 	
 	n(". . .");
-	m("Claire will be tutoring you every day after school, starting tomorrow.");
+	m("クレアには、毎日学校の後に来てもらうことにしたわ。明日から。");
 
 	Choose({
-		"Every day?! What about my friends?!":function(message){
+		"毎日?! 友達との時間は?!":function(message){
 			n(message);
-			m("Sweetie, I'm your friend!");
+			m("ニッキー、私だってあなたの友達よ。");
 			n(". . .");
-			m("Also Claire can be your friend. Maybe more than friends.");
+			m("クレアだって友達になれるわ。友達以上になるかもよ。");
 			n(". . .");
-			n("Are we done?");
-			m("Just... one more thing.");
+			n("それで話は終わり?");
+			m("ええと...もうひとつ。");
 			Plot_Twist();
 		},
-		"Okay, but my weekends are free, right?": function(message){
+		"わかったよ。けど週末は自由だよね?": function(message){
 			n(message);
-			m("Yes.");
-			n("Okay. Good that this is all settled now.");
-			m("...Yes.");
+			m("いいわ。");
+			n("オーケー、それならもういいよ。");
+			m("...そうね。");
 			n(". . .");
-			m("Just... one more thing.");
+			m("それと...もうひとつ。");
 			Plot_Twist();
 		},
-		"What if just DON'T study with Claire?": function(message){
-			n(message);
-			m("Well, if you also want to hang out with her, that's good too.");
-			m("Anything to make you more manly.");
-			n("ugh.");
-			m("Oh.");
-			m("One more thing.");
+		"クレアと勉強したくないって言ったら?": function(message){
+			n("もし"+message);
+			m("あら、彼女と遊びたいっていうならそれでもいいわよ。");
+			m("なんにせよ男を磨いてくれるのなら。");
+			n("うげ。");
+			m("あ。");
+			m("それともうひとつ。");
 			Plot_Twist();
 		}
 	});
@@ -225,36 +225,36 @@ function Threat_School(){
 
 	$.changing_schools = true;
 	
-	m("You're changing schools.");
+	m("あなたの通う学校、変えた方がいいわ。");
 
 	Show("nicky","dinner_nicky_outrage");
 
-	n("WHAT?!");
-	m("I think it's not just Jack, it's the entire school that's a bad influence on you.");
-	n("ARE YOU SERIOUS.");
-	m("The whole Canadian culture is making you confused about who you are.");
+	n("なんだって?!");
+	m("ジャックのことだけじゃなくて、いまの学校、あなたにとってあまり良くないと思うの。");
+	n("本気で言ってるの?");
+	m("カナダの雰囲気そのものが、あなたをおかしくしてるんだわ。");
 
 	Show("nicky","dinner_nicky_defiant");
 
 	Choose({
-		"No, it's YOUR Asian culture that's backwards!": function(message){
-			n(message);
-			m("Don't be so rude!");
-			m("It's YOUR culture, too!");
+		"アジア的価値観の方がおかしいだろ。": function(message){
+			n("それは違うよ。そのアジア的価値観の方が時代遅れなんだよ。");
+			m("生意気なことを言わないで!");
+			m("あなただってアジア人なのよ!");
 			n(". . .");
 			Plot_Twist();
 		},
-		"You can't do this to your CHILD!": function(message){
+		"自分の子によくそんなこと言えるな!": function(message){
 			n(message);
-			m("Don't be so rude!");
-			m("I'm your MOTHER, it's my right to do whatever I want with you!");
+			m("生意気なことを言わないで!");
+			m("私はあなたの母親よ。親として当然のことをしてるだけじゃない!");
 			n(". . .");
 			Plot_Twist();
 		},
-		"Whatever, ALL schools have queer people.": function(message){
+		"どこの学校に行ったって、同性愛者はいるよ。": function(message){
 			n(message);
-			m("Don't be so rude!");
-			m("And watch it, I could change my mind and start homeschooling you.");
+			m("生意気なことを言わないで!");
+			m("言葉に気を付けなさい。学校を止めさせて自宅学習にすることだって考えたわよ。");
 			n(". . .");
 			Plot_Twist();
 		}
@@ -264,8 +264,8 @@ function Threat_School(){
 
 function Plot_Twist(){
 
-	m("Yesterday, when you were supposedly studying with Jack?");
-	m("I know you secretly went off to watch a movie.");
+	m("あなた、昨日ジャックと勉強してたことにしてるけど、");
+	m("こっそり映画を観に行ってたでしょう。");
 
 	Show("nicky","dinner_nicky_sit");
 	n(". . .");
@@ -273,20 +273,20 @@ function Plot_Twist(){
 	Show("clock_time","clock_1920");
 
 	Choose({
-		"Oh my god. You read my texts.": function(message){
+		"ふざけんな、メールのぞいたのかよ。": function(message){
 			n(message);
-			m("Yes. See how smart you can be when you're not with Jack?");
+			m("そうよ。あなたジャックと一緒じゃないときの方が、頭が回るんじゃない?");
 			Plot_Twist_2();
 		},
 		"No, we didn't. We studied.": function(message){
 			n(message);
-			m("You are a very stubborn boy.");
-			m("I read your text messages.");
+			m("あら、ずいぶんと強気ね。");
+			m("あなたのジャックとのメール読んだわよ。");
 			Plot_Twist_2();
 		},
-		"What makes you think that?": function(message){
+		"なんでそう思ったの?": function(message){
 			n(message);
-			m("Because I read your text messages.");
+			m("あなたのジャックとのメール読んだのよ。");
 			Plot_Twist_2();
 		}
 	});
@@ -296,24 +296,24 @@ function Plot_Twist(){
 function Plot_Twist_2(){
 
 	n(". . .");
-	m("Before dinner. I was in your room.");
+	m("晩御飯の直前に、あなたの部屋に行ってみたのよ。");
 
 	// Dinner_1
 	m("あなたが「"+$.what_you_called_out+"」って叫んでたとき、お母さんはあなたの電話のロックを外したの...");
 	m("それで、あなたとジャックが何を話してたのか、全部読んだわ。");
-	m("I'm your mother. I have the right.");
+	m("私はあなたの親よ。親として当然じゃない。");
 
 	n(". . .");
 
 	if($.im_a_poet){
-		m("Weird poetry?");
+		m("クサい詩?");
 	}
 	if($.hippies){
-		m("Talking about smoking marijuana?");
+		m("マリファナがどうしたとか?");
 	}
 	if($.im_a_poet || $.hippies){
-		m("Helping you lie to your own mother?");
-		m("What else have you been doing behind my back?");
+		m("どうして自分の親に嘘をつくの?");
+		m("他にいったい何を隠れてやってるのよ?");
 	}
 
 	Choose({
