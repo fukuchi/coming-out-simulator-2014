@@ -5,23 +5,23 @@
 function Start_Dinner_4(){
 
 	n(". . .");
-	m("It's because your dad's almost never home, isn't it?");
-	m("Without a strong male role model, you become confused...");
+	m("お父さんがほとんど家にいないのがいけないのね?");
+	m("お手本になるような男性が近くにいないせいで、男とは何か、あなたは分からなくなっているんだわ...");
 
 	Choose({
-		"Yeah, coz Dad's SUCH a great role model.": function(message){
+		"父さんはいいお手本だよホント。": function(message){
 			n(message);
-			m("Nick, no matter what, he's your father. You should love him.");
+			m("ニッキー、何をしようとあの人はあなたのお父さんなのよ。お父さんを愛しなさい。");
 			My_Fault();
 		},
-		"That's not how it works. I'd be bi anyway.": function(message){
-			n(message);
-			m("How do you know?! Are you an expert in psychology?!");
+		"そんなことは関係ないよ。That's not how it works. I'd be bi anyway.": function(message){
+			n("そんなことは関係ないよ。どっちにしろ僕はバイになってたよ。");
+			m("そんな事あなたに分かんないでしょ! あなた心理学の専門家でもないでしょう?!");
 			My_Fault();
 		},
-		"You know what? Maybe you're right.": function(message){
+		"あの...そうかもね。": function(message){
 			n(message);
-			m("I know...");
+			m("そうよ...");
 			My_Fault();
 		}
 	});
@@ -33,20 +33,20 @@ function My_Fault(){
 	Show("clock_time","clock_1930");
 
 	n(". . .");
-	m("This is all my fault...");
-	m("I told you to be careful around those kinds of people, but I told you too late...");
+	m("私がいけないんだわ...");
+	m("ああいうタイプの人に気をつけなさいと、もっと早く言ってあげるべきだったわ...");
 
 	Show("mom","mom_cry");
 
-	m("[sob]");
-	m("Oh Nick! My poor baby!");
+	m("[すすり泣く]");
+	m("ニッキー! かわいそうに!");
 
 	Show("nicky","dinner_nicky_sit");
 
 	Choose({
-		"Mom... please don't cry...": Cry_1,
-		"Quit your fake crying.": Cry_2,
-		"[cry]": Cry_3
+		"母さん...泣かないで...": Cry_1,
+		"嘘泣きはやめろよ。": Cry_2,
+		"[泣く]": Cry_3
 	});
 }
 
