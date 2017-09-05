@@ -317,23 +317,23 @@ function Plot_Twist_2(){
 	}
 
 	Choose({
-		"This has to be a bad dream.": function(message){
+		"これはただの悪い夢なんだ。": function(message){
 			n(message);
-			m("Like that 'Deception' movie?");
-			n("It's... it's 'Inception'.");
-			m("Don't talk back to me.");
+			m("あなた達が観てた「デセプション（欺瞞）」とかいう映画みたいに?");
+			n("僕らが...あれは「インセプション」だってば。");
+			m("そんなのどうだっていいわ。");
 			Plot_Twist_3();
 		},
-		"I'm sorry. I'm so sorry.": function(message){
+		"ごめん。本当にごめん。": function(message){
 			n(message);
-			m("I forgive you.");
-			m("You're my child, of course I forgive you.");
+			m("あなたのことは許してあげる。");
+			m("自分の子供ですもの、もちろん許してあげるわ。");
 			Plot_Twist_3();
 		},
-		"I hate you.": function(message){
+		"一生恨むぞ。": function(message){
 			n(message);
-			m("That's okay.");
-			m("I still love you, Nick.");
+			m("別にそれでいいわ。");
+			m("私はあなたのことを愛してるわよ、ニッキー。");
 			Plot_Twist_3();
 		},
 	});
