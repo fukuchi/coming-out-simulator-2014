@@ -55,12 +55,12 @@ function Cry_1(message){
 	$.crying = "sympathy";
 
 	n(message);
-	m("huu... huu... huu...");
-	n("I'm sorry. About Jack, the lies, everything.");
-	m("owww... owww...");
-	n("I take it all back.");
-	m("sniff...");
-	n("...please...");
+	m("うっ...うっ...うっ...");
+	n("ごめん。ジャックのこととか、嘘ついたこととか、ぜんぶ。");
+	m("ううっ...ううっ...");
+	n("ぜんぶ取り消すよ。");
+	m("ぐすっ...");
+	n("...ねえ...");
 	What_Are_You();
 }
 
@@ -70,12 +70,12 @@ function Cry_2(message){
 	Show("nicky","dinner_nicky_defiant");
 
 	n(message);
-	m("huu... huu... huu...");
-	n("Seriously, it is SO fake.");
-	m("owww... owww...");
-	n("Will you shut up?!");
-	m("sniff...");
-	n("SHUT. UP.");
+	m("うっ...うっ...うっ...");
+	n("ホント、わざとらしいよ。");
+	m("ううっ...ううっ...");
+	n("もう止めたら?!");
+	m("ぐすっ...");
+	n("止めろ。いますぐ。");
 	What_Are_You();
 
 }
@@ -85,15 +85,15 @@ function Cry_3(message){
 	$.crying = "mocking";
 	Show("nicky","dinner_nicky_outrage");
 
-	n("BAWWWWW");
-	m("huu... huu... huu...");
-	n("WAH WAH WAH WAH WAHHH");
-	m("owww... owww...");
-	n("BRRrrRR-BRR-BRbR BWAH BWAHRR rrrRRR-WaahHH WO WO WO RaaahhH");
-	m("sniff...");
+	n("しくしくしく。");
+	m("うっ...うっ...うっ...");
+	n("えーんえーん。");
+	m("ううっ...ううっ...");
+	n("うおおんうおおんえぐっえぐっえぐっあんぎゃああんぎゃあ。");
+	m("ぐすっ...");
 
 	Show("nicky","dinner_nicky_defiant");
-	n("Okay, we done?");
+	n("もう気が済んだ?");
 	What_Are_You();
 
 }
@@ -101,27 +101,27 @@ function Cry_3(message){
 function What_Are_You(){
 
 	m(". . .");
-	m("Nick... what are you?");
-	n("Excuse me?");
+	m("ニッキー...結局あなたどうなの?");
+	n("どうって、何が?");
 
 	Show("nicky","dinner_nicky_sit");
 
 	Show("mom","mom_sit");
-	m("What <i>are</i> you?");
+	m("あなたは<i>どっち</i>なの?");
 
 	Choose({
-		"I'm bisexual.": function(message){
+		"僕はバイセクシャルだ。": function(message){
 
 			$.what_are_you = "bisexual";
 
 			n(message);
 			if($.admit_bisexuality){
-				m("...and you said that means...");
+				m("...それって、さっきも言ってたけど...");
 			}
-			n("Sexually attracted to both men and women.");
-			m("You can't be both.")
-			m("You have to pick one.");
-			n("That's... not how it works. At all.");
+			n("女にも男にも性的に興味を持つ人ってことだよ。");
+			m("どっちもなんておかしいわ。")
+			m("どちらかを選ばないと。");
+			n("そういうもんじゃないんだよ...とにかく。");
 			Have_You_Had_Sex();
 
 		},
