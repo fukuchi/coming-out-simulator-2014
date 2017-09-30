@@ -278,7 +278,7 @@ function Plot_Twist(){
 			m("そうよ。あなたジャックと一緒じゃないときの方が、頭が回るんじゃない?");
 			Plot_Twist_2();
 		},
-		"No, we didn't. We studied.": function(message){
+		"違うってば、勉強してたよ。": function(message){
 			n(message);
 			m("あら、ずいぶんと強気ね。");
 			m("あなたのジャックとのメール読んだわよ。");

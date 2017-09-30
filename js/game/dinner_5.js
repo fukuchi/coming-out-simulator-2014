@@ -10,38 +10,38 @@ function Start_Dinner_5(){
 
 	PlaySound("sfx","dinner_door");
 	
-	f("Hey Qiying! Hey Nick!");
-	f("I'm home!");
+	f("ただいま母さん、ニッキー!");
+	f("帰ったぞ!");
 	
 	Show("dad","dad_serious");
 
-	m("Hi honey.");
-	n("Sup dad, how was your day?");
+	m("お帰りなさい、あなた。");
+	n("よう父さん、今日はどうした?");
 
-	f("Stayed overtime. Hopefully the boss will notice it before my Performance Review.");
-	f("Really, though, I was just playing web games all day. Haha!");
-	n("Ha ha.");
+	f("残業だよ。上司ちゃんと見てて勤務評価につけてくれればいいんだが。");
+	f("本当は Web ゲームで遊んでただけなんだけどな。ハハハッ!");
+	n("あはは。");
 
-	f("Nick, why aren't <i>your</i> web games any fun?");
+	f("ニッキー、お前もちょっとは面白い Web ゲームを作ったらどうなんだ?");
 
 	Choose({
-		"I thought my games were fun...": function(message){
+		"十分面白いと思うけど...": function(message){
 			n(message);
-			f("Well then! You have a sick sense of fun, don't you. Haha!");
+			f("なら、お前のセンスはちょっとおかしいんだな! ハッハッハ!");
 			n(". . .");
 			Casual();
 		},
-		"Not all games have to be fun.": function(message){
+		"面白いばかりがゲームじゃないだろ。": function(message){
 			n(message);
-			f("Oh yes. You're right.");
-			f("BAD games aren't any fun. Haha!");
+			f("おお、そうだ、もちろんその通りだ。");
+			f("出来の悪いゲームは面白くないもんだ。ハッハッハ!");
 			n(". . .");
 			Casual();
 		},
-		"ART!": function(message){
+		"アートだ!": function(message){
 			n(message);
-			f("Pfft. What's the use of art?");
-			f("Next thing you know, you're going to be writing bad amateur poetry, or something.");
+			f("プッ。アートになんの意味がある?");
+			f("次にお前は、素人まるだしのバカバカしい詩かなんかでも書くんだろう。");
 			n(". . .");
 			Casual();
 		}
