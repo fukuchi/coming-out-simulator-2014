@@ -51,48 +51,48 @@ function Start_Dinner_5(){
 
 function Casual(){
 	
-	f("Hey Qi, what's that sauce on your plate?");
-	f("Uh...");
+	f("おい母さん、その皿にかかってるのはなんのソースなんだい?");
+	f("その...");
 
 	Show("clock_time","clock_1950");
 
 	Choose({
-		"It's vomit.": function(message){
+		"ゲロだよ。": function(message){
 			
 			n(message);
 
 			$.grounded = 2;
-			f("Nick! One week grounded!");
-			f("Don't insult your mother's cooking like that.");
-			f("Her food insults itself plenty enough. Haha!");
+			f("ニッキー! 廊下で正座してろ!");
+			f("母さんの料理をそんな風にけなすもんじゃない。");
+			f("母さんも自分が作った料理を食べているんだ。それ以上責めるなよ。ハッハッハ!");
 
 			Casual_2();
 
 		},
-		"Don't eat it! It's, uh, really not good.": function(message){
+		"食べちゃダメだ! ヤバいって。": function(message){
 			
 			n(message);
 
 			$.grounded = 1;
-			f("Nick! One day grounded!");
-			f("Show some respect. Have more faith in your mother's cooking!");
-			f("Because the way she cooks, we could certainly use a miracle! Haha!");
+			f("ニッキー! 廊下で立ってろ!");
+			f("お前には敬意が足りない。母さんの料理を少しは敬えよ。");
+			f("いくら見た目がひどくても、意外に食える、って可能性だってなくはないだろ? ハッハッハ!");
 
 			Casual_2();
 
 		},
-		"Why don't you give it a try, dad?": function(message){
+		"味見してみたら?": function(message){
 			
 			n(message);
 
 			$.grounded = 0;
-			m("Nick...");
-			f("Don't mind if I do!");
-			f("[eats a spoonful]");
+			m("ニッキー...");
+			f("どれ、それじゃ遠慮なく。");
+			f("[一匙食べる]");
 			f(". . .");
 			n(". . .");
 			m(". . .");
-			f("Well, you've cooked up worse, hun. Haha!");
+			f("おい、またずいぶんとマズく作ったな。ハッハッハ!");
 
 			Casual_2();
 
@@ -103,8 +103,8 @@ function Casual(){
 
 function Casual_2(){
 	
-	m("Dear...");
-	f("So, son! How's school?");
+	m("あなた...");
+	f("さて息子よ! 学校はどうだ、ん?");
 
 	Choose({
 		"School's fine.": function(message){
