@@ -24,13 +24,13 @@ function Start_Jack_2(){
 
 	/////////////////////////////
 
-	n("Hey Jack.");
+	n("やあジャック。");
 	if($.sadsack){
-		j("Hello, Nicky darling. Still a sad sack of sadness?");
+		j("やあニッキー。まだどうしようもなく悲観的な気分かい?");
 	}else{
-		j("Hello, Nicky darling.");
+		j("やあニッキー。");
 	}
-	j("How was coming out to your parents? Did I tell you so, or did I tell you so?");
+	j("親へのカミングアウトはどうだった? うまくいったろ?");
 
 	Choose({
 		"Jack... we messed up big time, Jack.": function(message){
