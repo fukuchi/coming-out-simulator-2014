@@ -18,7 +18,7 @@ function Start_Dinner_5(){
 	m("お帰りなさい、あなた。");
 	n("よう父さん、今日はどうした?");
 
-	f("残業だよ。上司ちゃんと見てて勤務評価につけてくれればいいんだが。");
+	f("残業だよ。上司がちゃんと勤務評価につけてくれればいいんだが。");
 	f("本当は Web ゲームで遊んでただけなんだけどな。ハハハッ!");
 	n("あはは。");
 
@@ -62,7 +62,7 @@ function Casual(){
 			n(message);
 
 			$.grounded = 2;
-			f("ニッキー! 廊下で正座してろ!");
+			f("ニッキー! 一週間の外出禁止だ!");
 			f("母さんの料理をそんな風にけなすもんじゃない。");
 			f("母さんも自分が作った料理を食べているんだ。それ以上責めるなよ。ハッハッハ!");
 
@@ -74,7 +74,7 @@ function Casual(){
 			n(message);
 
 			$.grounded = 1;
-			f("ニッキー! 廊下で立ってろ!");
+			f("ニッキー! 明日は外出禁止だ!");
 			f("お前には敬意が足りない。母さんの料理を少しは敬えよ。");
 			f("いくら見た目がひどくても、意外に食える、って可能性だってなくはないだろ? ハッハッハ!");
 
@@ -107,22 +107,22 @@ function Casual_2(){
 	f("さて息子よ! 学校はどうだ、ん?");
 
 	Choose({
-		"School's fine.": function(message){
+		"うまくやってるよ。": function(message){
 
 			n(message);
 
-			f("Really, fine?");
+			f("ほんとか?");
 			if($.studying_subject!=$.studying_subject_2){
-				f("What about your poor grades in "+$.studying_subject+" and "+$.studying_subject_2+"?");
+				f($.studying_subject+"と"+$.studying_subject_2+"の成績はどうなんだ?");
 			}else{
-				f("What about your poor grades in "+$.studying_subject+"?");
+				f($.studying_subject+"の成績はどうなんだ?");
 			}
 
-			m("Nick and I were just talking about that.");
+			m("ニッキーとちょうどその話をしてたのよ。");
 			Getting_A_Tutor();
 
 		},
-		"I'm studying at a friend's place tomorrow.": function(message){
+		"明日は友達のところで勉強するよ。": function(message){
 			n(message);
 
 			$.tried_talking_about_it = true;
@@ -153,17 +153,17 @@ function Casual_2(){
 			Getting_A_Tutor();
 
 		},
-		"DAD I'M BISEXUAL AND BANGING JACK.": function(message){
+		"僕はバイでジャックとヤってるんだ。": function(message){
 			$.tried_talking_about_it = true;
 
 			Show("nicky","dinner_nicky_outrage");
-			n("DAD I'M BI--");
+			n("父さん、僕はバイ—");
 			Show("nicky","dinner_nicky_sit");
 
-			m("BICYCLING to school every day starting next week.");
-			f("Oh good!");
-			f("You could certainly lose some weight, or else how will you get a girlfriend?");
-			f("You must get your chubbiness from your mother. Haha!");
+			m("バイシクルで学校に行くって、来週から。");
+			f("お、いいじゃないか。");
+			f("少しは体重を落とさないと、女の子にモテないだろ?");
+			f("太りやすいのは母さんに似たんだな。ハッハッハッ!");
 			n("Ha ha.");
 			m("Speaking of school...");
 			Getting_A_Tutor();
