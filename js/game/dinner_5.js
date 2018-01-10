@@ -130,26 +130,26 @@ function Casual_2(){
 			if($.grounded>0){
 
 				if($.grounded==1){
-					f("Don't you remember? I just grounded you for tomorrow.");
+					f("忘れたのか? 明日は外出禁止と言ったはずだぞ。");
 				}
 				if($.grounded==2){
-					f("Don't you remember? I just grounded you for a week.");
+					f("忘れたのか? 一週間の外出禁止と言ったはずだぞ。");
 				}
-				f("You must get your stupid from your mother's side. Haha!");
+				f("間抜けなところは母さんに似たんだな。ハッハッハ!");
 				
-				n("Um. I...");
+				n("でも、僕...");
 
 				$.grounded++;
 				if($.grounded==2){
-					f("I'm bumping it up. You're now grounded for a week.");
+					f("まだ足りないようだな。お前は一週間外出禁止だ。");
 				}
 				if($.grounded==3){
-					f("I'm bumping it up. You're now grounded for TWO weeks.");
+					f("まだ足りないようだな。お前は二週間外出禁止だ。");
 				}
 
 			}
 
-			m("Speaking of studying...");
+			m("勉強のことについて話しましょう...");
 			Getting_A_Tutor();
 
 		},
@@ -164,8 +164,8 @@ function Casual_2(){
 			f("お、いいじゃないか。");
 			f("少しは体重を落とさないと、女の子にモテないだろ?");
 			f("太りやすいのは母さんに似たんだな。ハッハッハッ!");
-			n("Ha ha.");
-			m("Speaking of school...");
+			n("ハハハ...");
+			m("その学校のことだけど...");
 			Getting_A_Tutor();
 		}
 
@@ -175,34 +175,34 @@ function Casual_2(){
 
 function Getting_A_Tutor(){
 
-	m("We were discussing probably getting a home tutor.");
-	f("Oh! Is this the Claire kid?");
+	m("家庭教師のことについてニッキーに話してたのよ。");
+	f("ああ! 例のクレアって娘か?");
 
 	// Oh dang!
 	Show("nicky","dinner_nicky_defiant");
 
 	switch($.promise_silence){
 		case "yes":
-			n("Mom, we both promised we wouldn't talk about this...");
+			n("母さん、そのことは話さないって約束だろ...");
 			if($.tried_talking_about_it){
-				m("You <i>just</i> tried talking about it.");
+				m("<strong>あなたが</strong>先に話そうとしたでしょ。");
 			}
 			break;
 		case "no":
-			n("Mom, you said we wouldn't talk about this...");
-			m("You're the one who didn't promise not to talk!");
+			n("母さん、そのことは話さないって...");
+			m("あなたは約束しなかったじゃない。");
 			break;
 		case "tit for tat":
-			n("Mom, you said you wouldn't talk about this if I didn't...");
+			n("母さん、母さんが言わなきゃ僕も話さない、そういう約束だったじゃないか...");
 			if($.tried_talking_about_it){
-				m("You <i>just</i> tried talking about it.");
+				m("<strong>あなたが</strong>言おうとしてたじゃない。");
 			}
 			break;
 	}
 
-	f("Talking about what?...");
-	f("I'm the head of this household. You two better not be hiding secrets from me.");
-	m("Oh... Nick just really, really likes Claire.");
+	f("なんのことだ?...");
+	f("俺はこの家の主人だ。二人とも、俺に隠しごとをするのは許さんぞ。");
+	m("あの...ニッキーは、クレアのことを好きみたいなのよ。本当よ。");
 
 	Choose({
 		"What?! No I don't!": function(message){
