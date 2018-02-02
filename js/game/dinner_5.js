@@ -205,19 +205,19 @@ function Getting_A_Tutor(){
 	m("あの...ニッキーは、クレアのことを好きみたいなのよ。本当よ。");
 
 	Choose({
-		"What?! No I don't!": function(message){
+		"はぁ? んなワケないだろ!": function(message){
 			n(message);
-			f("Don't be so shy about it.");
+			f("あら、そんな照れなくても。");
 			Getting_A_Tutor_2();
 		},
-		"Fine. You got me. I have a crush on Claire.": function(message){
+		"くそ、わかったよ。そういうことさ。": function(message){
 			n(message);
 			Getting_A_Tutor_2();
 		},
-		"I have a boyfriend.": function(message){
+		"僕には彼氏がいるんだ。": function(message){
 			n(message);
-			f("Yes son! You're going to be a boyfriend!");
-			n("<i>Have</i>. I <i>have</i> a--");
+			f("そうか、我が息子よ! お前もいよいよ「彼氏」になるんだな!");
+			n("僕に彼氏<strong>が</strong>いるんだって。<strong>僕に</strong>—");
 			Getting_A_Tutor_2();
 		}
 	});
