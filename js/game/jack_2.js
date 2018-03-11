@@ -33,24 +33,24 @@ function Start_Jack_2(){
 	j("親へのカミングアウトはどうだった? うまくいったろ?");
 
 	Choose({
-		"Jack... we messed up big time, Jack.": function(message){
+		"メチャメチャだよ、ジャック...": function(message){
 			n(message);
-			j("No... no, no.");
-			j("You're kidding me, right? What happened?");
+			j("そんな... 嘘だろ。");
+			j("なぁ、冗談だろ? 何があった?");
 			What_Happened();
 		},
-		"Things could have been worse.": function(message){
+		"「最悪」ってほどではなかったよ。": function(message){
 			n(message);
-			j("Oh. Oh no.");
-			j("I didn't expect that they'd... what... what happened?");
+			j("えっ、まさか。");
+			j("うまく行くと思ったんだよ... 何が... 何があったの?");
 			What_Happened();
 		},
-		"Shut up, Jack.": function(message){
+		"黙っててくれ、ジャック。": function(message){
 			n(message);
-			j("Ha, yes, I knew I was right!");
-			n("No. Jack, we can't see each other ever again.");
-			j("Wait.");
-			j("No, no, no. You're kidding me, right? What happened?");
+			j("な、うまく行くと思ってたよ!");
+			n("違うんだ。ジャック、君とはもう逢えなくなる。");
+			j("ちょっと待て。");
+			j("おいおい、嘘だろ? 何があった?");
 			What_Happened();
 		}
 	});
@@ -61,18 +61,18 @@ function What_Happened(){
 
 	if($.punched){
 		Choose({
-			"My dad punched me in the face.": What_Happened_Abuse,
-			"They're making me change schools.": What_Happened_School,
-			"They read all our texts.": What_Happened_Texts
+			"親父に顔をぶん殴られた。": What_Happened_Abuse,
+			"親に転校させられることになった。": What_Happened_School,
+			"僕らのメールを全部見られた。": What_Happened_Texts
 		});
 	}else if($.father_oblivious==false){
 		Choose({
-			"My parents got verbally violent with each other.": What_Happened_Abuse,
-			"They're making me change schools.": What_Happened_School,
-			"They read all our texts.": What_Happened_Texts
+			"二人とも僕を口汚く罵った。": What_Happened_Abuse,
+			"転校しろって言われた。": What_Happened_School,
+			"僕らのメールを全部見られた。": What_Happened_Texts
 		});
 	}else{
-		n("Well, my dad's oblivious. For now. But my mom...");
+		n("ああ、親父は忘れっぽいし、しばらくは平気だろう。だけど母さんは...");
 		if($.changing_schools){
 			Choose({
 				"She's making me change schools.": What_Happened_School,
