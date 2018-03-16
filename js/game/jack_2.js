@@ -75,15 +75,15 @@ function What_Happened(){
 		n("ああ、親父は忘れっぽいし、しばらくは平気だろう。だけど母さんは...");
 		if($.changing_schools){
 			Choose({
-				"She's making me change schools.": What_Happened_School,
-				"She's setting me up with a girl I've never met.": What_Happened_Girl,
-				"She read all our texts.": What_Happened_Texts,
+				"僕を転校させようとしてる。": What_Happened_School,
+				"知らない女の子と僕を会わせようとしてる。": What_Happened_Girl,
+				"僕らのメールを全部読んだ。": What_Happened_Texts,
 			});
 		}else{
 			Choose({
-				"She got a tutor to kill all my after-school hours.": What_Happened_School,
-				"She's setting me up with a girl I've never met.": What_Happened_Girl,
-				"She read all our texts.": What_Happened_Texts,
+				"家庭教師を僕につけて放課後を潰すつもりだ。": What_Happened_School,
+				"知らない女の子と僕を会わせようとしてる。": What_Happened_Girl,
+				"僕らのメールを全部読んだ。": What_Happened_Texts,
 			});
 		}
 	}
@@ -94,11 +94,11 @@ function What_Happened_Abuse(message){
 	$.told_jack = "abuse";
 
 	n(message);
-	j("Oh my god!");
-	j("Nicky, you need to call Child Protective Services.");
-	n("What?! No. That's way too much.");
-	j("Just... okay, but at least promise me you'll visit the school counselor tomorrow?");
-	n("Fine.");
+	j("なんだって!");
+	j("ニッキー、すぐに児童保護サービスに連絡するんだ。");
+	n("はぁ?! いいよ、そこまでのことじゃないよ。");
+	j("だっ... ならいいけど、せめて明日スクールカウンセラーに行くんだ。いいね?");
+	n("ああ。");
 	j(". . .");
 	What_Happened_2();
 }
@@ -106,20 +106,20 @@ function What_Happened_School(message){
 	$.told_jack = "school";
 
 	n(message);
-	j("No!");
-	j("Why?! Why are they doing that?");
-	n("Because 'Jack and the school is a bad influence on me', or something. They just want to break us up.");
-	j("That's horrible...");
+	j("そんな!");
+	j("なぜ?! なんでそんなことを?");
+	n("それは、ジャックや今の学校は僕に悪い影響を与える、とかそんなところさ。僕らを離したがっているんだ。");
+	j("そんな、嘘だろ...");
 	What_Happened_2();
 }
 function What_Happened_Girl(message){
 	$.told_jack = "girl";
 
 	n(message);
-	j("Ew, seriously?");
-	n("Her name's Claire Something. She'll also be tutoring me.");
-	j("Ew squared, they're also hooking you up with your own tutor?");
-	n("Yup."); 
+	j("げ、マジか?");
+	n("クレアとかいう名前の子だよ。家庭教師もやるってさ。");
+	j("うげ、マジメかよ。で、親はその子とお前をくっつけようとしてるってことか?");
+	n("そういうこと。"); 
 	What_Happened_2();
 }
 function What_Happened_Texts(message){
