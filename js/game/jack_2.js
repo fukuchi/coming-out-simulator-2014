@@ -126,54 +126,54 @@ function What_Happened_Texts(message){
 	$.told_jack = "texts";
 
 	n(message);
-	j("That is just plain rude!");
-	j("Wait, what will you do with these texts right now, then?");
-	n("I can hide them better. My parents aren't exactly a tech-savvy bunch.");
-	j("...just plain rude.");
+	j("そんな横暴な!");
+	j("ちょっと待って、じゃあいま書いてるこのメールはどうすればいい?");
+	n("なんとか隠せると思う。うちの親は新技術には疎いから。");
+	j("...こんなの横暴だよ。");
 	What_Happened_2();
 }
 
 function What_Happened_2(){
 	
-	n("And that's just one out of three crappy things that happened.");
-	j("Nicky...");
-	j("I am truly, truly apologetic.");
-	j("This is my fault. I urged you to come out to your parents. Stupid me.");
+	n("で、いまのは今日起きたクソみたいな三つの出来事の、一つ目だよ。");
+	j("ニッキー...");
+	j("本当に、本当にごめん。");
+	j("カミングアウトなんかさせるんじゃなかった。僕がバカだったよ。");
 
 	Choose({
-		"Yeah, stupid you.": function(message){
+		"そうだね、バカだった。": function(message){
 			$.blame = "jack";
 
 			n(message);
-			n("If you hadn't been all so 'ohhhh Nicky coming out is good for the soul' and shit, this never would have...");
+			n("もし君が「おおニッキー、カミングアウトして君の魂を解放するんだ」とか言わなきゃ、こんなことには...");
 			j(". . .");
-			n("I'm sorry. You're the only person I can lash out on.");
-			n("Isn't that just fucked up?");
+			n("ごめん。こんな事言えるの、君くらいなんだ。");
+			n("もうどうすればいいのか分からないんだよ。");
 			What_Now();
 		},
-		"No, it's THEIR fault.": function(message){
+		"違うさ、悪いのはうちの親だ。": function(message){
 			$.blame = "parents";
 
 			n(message);
-			n("They already read our texts. Anything I would have said after that couldn't change what happened.");
+			n("奴らは僕らのメールを読んだ。もう僕が何を言ったところで何も変わらないよ。");
 			if($.told_jack!="texts"){
-				j("What! You didn't tell me they also read your texts!");
+				j("えっ! 君の親はメールまで読んだのか?!");
 			}else{
-				j("And they're stuck in their old-fashioned moralities, the poor things.");
-				n("I wouldn't go so far as to pity them.");
+				j("古い考え方に縛られ続けているってことか。悲しいね。");
+				n("同情する気にはなれないな。");
 			}
 			What_Now();
 		},
-		"No, this is all my fault.": function(message){
+		"いや、ぜんぶ僕が悪いんだ。": function(message){
 			$.blame = "nicky";
 
 			n(message);
-			n("I should have passcode-locked my phone, or use encrypted text, or hid it better...");
+			n("僕の電話をパスコードロックしておくべきだったんだ。それかメールを暗号化しておくか、もっとうまく隠しておけば...");
 			if($.told_jack!="texts"){
-				j("They read your texts, too?...");
+				j("メールも読まれたって?...");
 			}
-			j("Nicky, you had every right to trust them, they're your parents. They abused that trust. It's not your fault.");
-			n("Yeah...");
+			j("ニッキー、君が自分の親を信用していたのは当然だ。親なんだから。君の両親こそが、君を裏切ったんだ。君のせいじゃない。");
+			n("うん...");
 			What_Now();
 		}
 	});
