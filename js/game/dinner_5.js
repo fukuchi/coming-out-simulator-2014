@@ -499,7 +499,7 @@ function Argument_Ending(){
 
 			Show("dad","dad_serious");
 
-			m("sniff...");
+			m("グスッ...");
 			f("ちょっとバーにでも行って、ちっとはマシなものを食ってくる。");
 
 			Show("dad",null);
