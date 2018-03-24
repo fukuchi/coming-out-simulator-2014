@@ -19,21 +19,21 @@ function Start_Outro(){
 	///////////////////////////////
 
 	if($.breaking_up_soon){
-		N("And then we broke up three days later.");
+		N("そして僕らは三日後に別れた。");
 	}else{
-		N("And then we broke up three weeks later.");
+		N("そして僕らは三週間後に別れた。");
 	}
 
 	// Weave - intro
 	if($.main_menu_convo_1==1){
 		p(". . .");
-		N("Told you this didn't end in gay unicorns.");
+		N("言ったろ。この話はゲイのユニコーンで終わしはしないって。");
 	}else if($.main_menu_convo_1==3){
 		p(". . .");
-		N("Told you. Not blood, but tears.");
+		N("言ったろ。流血沙汰では終わりはしないって。涙も流れたし。");
 	}else if($.main_menu_convo_2==1){
 		p(". . .");
-		N("You were right. I'm a bit of a downer.");
+		N("君の言った通り、僕はダウナー系だったね。");
 	}
 
 	Choose({

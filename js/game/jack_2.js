@@ -184,47 +184,47 @@ function What_Now(){
 
 	j(". . .");
 
-	n("You know... talking with my parents, it's like...");
-	n("That mode of communication?");
-	n("It's imprecise, impersonal, impossible to truly connect.");
+	n("わかるだろ... うちの親と話すのは, なんていうか...");
+	n("あれがコミュニケーションか?");
+	n("不明瞭で、不毛で、不可解で。話し合いになんかなるもんか。");
 
 	j(". . .");
-	j("What now?");
+	j("それでどうする?");
 
 	Choose({
-		"I'm going to sabotage my parents' plans.": function(message){
+		"親が決めたことは無視するよ。": function(message){
 			n(message);
 
 			if($.told_jack=="texts"){
-				n("I'll set up a new email and virtual phone number to talk with you.");
-				n("This way they can't spy on our communications anymore.");
+				n("メールアドレスは変えて、電話するときも転送用の番号にかけるよ。");
+				n("そうすればもう僕らの会話をスパイすることもできなくなる。");
 			}else if($.told_jack=="girl"){
-				n("I'll tell Claire everything. With any luck, she'll help me fight back.");
+				n("クレアにはぜんぶ伝えるよ。もしかしたら、僕らのことを助けてくれるかもしれないし。");
 			}else{
-				n("I'll figure out a way, somehow...");
+				n("とにかく、なんとかするさ...");
 			}
 
 			What_Now_2();
 		},
-		"I'll visit the school counselor tomorrow.": function(message){
-			n(message);
+		"スクールカウンセラーのところに行くよ。": function(message){
+			n("明日、スクールカウンセラーのところへ行くよ。");
 
 			if($.told_jack=="abuse"){
-				n("Like I promised. Like you made me promise.");
+				n("約束したしね。君に言われて。");
 			}else if($.told_jack=="school"){
-				n("My current school, that is. I don't know how soon they'll be transferring me.");
+				n("今いる学校の、ね。いつ転校させられるのか、まだわからないし。");
 			}else{
-				n("At least they'll be someone else I can lash out on.");
+				n("それか、誰かこのことを言えそうなところに。");
 			}
 
 			What_Now_2();
 		},
-		"I'm getting out of this house.": function(message){
+		"家を出るつもりだ。": function(message){
 			n(message);
 
-			n("Not running away, I mean. Although if I did I could crash at your place.");
-			n("But anyway. I'm going to try to get an internship or scholarship in the US.");
-			n("And get far, far away from these people.");
+			n("逃げ出す、って訳じゃないよ。君のところに逃げ込むこともできるかもしれないけど。");
+			n("そうじゃなくて、アメリカに行って、インターンシップか、奨学金でも狙おうかと思ってるんだ。");
+			n("とにかく連中から遠いところに行きたいんだ。");
 			What_Now_2();
 		}
 	});
@@ -233,35 +233,35 @@ function What_Now(){
 
 function What_Now_2(){
 
-	j("No, I mean... what now, between us?");
-	n("Jack...");
-	j("What do we do? What... What happens?");
+	j("そうじゃなくて、僕らはどうなる?");
+	n("ジャック...");
+	j("これからどうする? どうなる?");
 	n(". . .");
 
 	Choose({
-		"We have to break up.": function(message){
+		"別れよう。": function(message){
 			$.breaking_up_soon = true;
 
 			n(message);
 
-			j("No, no no...");
-			n("I can't do this to you, Jack. I can't pull you down with me.");
-			j("At least, don't type 'we can still be friends'.");
-			n("we can still be frie");
+			j("おい、嘘だろ、考え直そう...");
+			n("君のためなんだ。こんなことに君を巻き込みたくないんだよ。");
+			j("せめて、「ずっと友達でいよう」なんて書かないでくれ。");
+			n("ずっと友達でい");
 			n(". . .");
-			j("Because, of course we're friends. Of course we are.");
+			j("だって、そうだろう。友達なのは当然じゃないか。当たり前だろ。");
 			n(". . .");
 			What_Now_3();
 		},
-		"We stick together as long as we can.": function(message){
-			n(message);
+		"ずっと一緒にいよう。": function(message){
+			n("ずっと一緒にいよう。できる限り。");
 
 			j(". . .");
-			j("As long as we can.");
+			j("僕らにできる限り、ずっと。");
 			n(". . .");
 			What_Now_3();
 		},
-		"I don't know.": function(message){
+		"わからない。": function(message){
 			$.breaking_up_soon = true;
 
 			n(message);
@@ -275,20 +275,20 @@ function What_Now_2(){
 
 function What_Now_3(){
 
-	n("It's late.");
-	n("There's a lot I need to sleep on, now.");
-	j("Okay.");
+	n("夜も遅い。");
+	n("もう寝るよ。今日はたっぷり寝たいんだ。");
+	j("わかった。");
 	j(". . .");
-	j("I love you, Nicky.");
-	n("I love you too, Jack.");
+	j("ニッキー、愛してるよ。");
+	n("僕も愛しているよ、ジャック。");
 	
 	var insult = "";
-	if($.hippies) insult+=" new-age hippie";
-	if($.im_a_poet) insult+=" amateur poet";
+	if($.hippies) insult+="ニューエイジヒッピー";
+	if($.im_a_poet) insult+="詩人";
 	if(insult!=""){
-		n("You"+insult+".");
+		n(insult+"さん。");
 	}else{
-		n("You goof.");
+		n("お馬鹿さん。");
 	}
 
 	The_Game_Ends();
