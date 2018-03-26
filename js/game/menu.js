@@ -27,6 +27,7 @@ function Start(){
 		}
 	});
 
+	Start_Outro();
 }
 
 function SipCoffee(message){
@@ -113,11 +114,11 @@ function Play_2(){
 	N("今となってはね。");
 
 	Choose({
-		"そんなんでちゃんとクリアできるの?": function(message){
+		"正解がどれか分からないのにうまく行くの?": function(message){
 			$.main_menu_convo_2 = 2;
 
 			p(message);
-			N("君もそう思うだろ。");
+			N("僕もそうだった。");
 			p(". . .");
 			Play_3();
 		},
@@ -129,7 +130,7 @@ function Play_2(){
 			p("ほら、やっぱりダウナー系だよお前は。");
 			Play_3();
 		},
-		"真実についてのゲームじゃなかったのかい?": function(message){
+		"「真実についてのゲーム」にしちゃ嘘だらけだな。": function(message){
 			$.main_menu_convo_2 = 3;
 
 			p(message);
@@ -157,7 +158,7 @@ function Play_3(){
 	}
 	switch($.main_menu_convo_2){
 		case 1: whatISay += "悪いけどダウナー系のゲームだ。"; break;
-		case 2: whatISay += "そして、ちゃんとクリアすることを目指すようなものでもない。"; break;
+		case 2: whatISay += "そして、正解がどれかを選ぶことが求められている訳でもない。"; break;
 		case 3: whatISay += "そして実のところ、嘘についてのゲームでもある。"; break;
 	}
 	N(whatISay);

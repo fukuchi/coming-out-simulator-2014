@@ -37,19 +37,19 @@ function Start_Outro(){
 	}
 
 	Choose({
-		"MY FEELS.":function(message){
+		"胸が痛むよ。":function(message){
 			p(message);
-			N("Let the feels flow, my friend.");
+			N("痛みもじきに引くさ。だろ?");
 			Closure();
 		},
-		"Aw, come on, that's cold dude.":function(message){
+		"おいやめろよ、根に持つ奴だな。":function(message){
 			p(message);
-			N("I don't deny that.");
+			N("否定はしないよ。");
 			Closure();
 		},
-		"Can't say I didn't see that coming...":function(message){
+		"なんとなくそうじゃないかと思ってたよ...":function(message){
 			p(message);
-			N("Yeah... Jack and I saw it coming, too.");
+			N("そうだね... ジャックと僕も、そう思ってたよ。");
 			Closure();
 		}
 	});
@@ -62,50 +62,50 @@ function Closure(){
 	Show("nicky","coffee_nicky_drink");
 	Show("cup",null);
 
-	p("Ugh.");
-	p("I feel gross just using the same-coloured dialogue balloons as the Father character.");
+	p("げっ。");
+	p("この吹き出しの色、君の親父さんのと同じ色じゃないか。嫌な気分だなこれ。");
 
 	Show("nicky","coffee_nicky_still");
 	Show("cup","cup_steam");
 
-	N("Which reminds me. Many of the characters have been swapped around.");
-	N("All names have been changed, except mine.");
-	N("I left my little brother out entirely, because he's innocent.");
-	N("And I put my Father back in, even though he'd left the family long before 2010.");
+	N("前にも言ったけど、ゲーム中のキャラクターは色々と変えてあるからね。");
+	N("名前もぜんぶ変えてある。僕の以外はね。");
+	N("僕の弟も出てこない。無関係だからね。");
+	N("あと、父親をゲーム中に引っ張り出してるけど、本当は2010年より前に家を出てるんだ。");
 
 	if($.main_menu_convo_2==3){
-		N("Like you said, this 'true' game is full of lies.");
+		N("君が言ったように、この「真実についてのゲーム」は、嘘だらけなんだよ。");
 	}
 	
-	p("You could have at least given me a different colour.");
-	N("It's been four years since that night...");
-	N("What do you think happened afterwards?");
+	p("せめて、違う色にしてくれたって良かったんじゃないか?");
+	N("あの夜から四年が経った...");
+	N("その間に何が起きたと思う?");
 
 	if($.main_menu_convo_2==2){
-		N("Don't worry. Like we said in the Main Menu, there are no right answers.");
+		N("大丈夫。最初に言ったように、正解なんてないんだから。");
 	}
 
 	$.coming_out_stories_left = 3;
 	$.order_of_stories = [];
 
 	Choose({
-		"Dude, I dunno, just freaking tell me.": function(message){
+		"知るか。さっさと教えろよ。": function(message){
 			p(message);
-			N("Alright, I will tell you what happened.");
-			N("...and what happened, and what happened.");
-			p("What.");
+			N("いいよ、では何が起きたか教えてあげよう。");
+			N("...そして何が起きて、それから何が起きたか。");
+			p("なんだそりゃ。");
 			Closure_Story();
 		},
-		"Let me guess, It Gets Better&trade;?": function(message){
+		"あ、「きっとよくなる (It Gets Better&trade;)」ってやつ?": function(message){
 			p(message);
-			N("Yes, actually! In all three versions of what happened.");
-			p("What.");
+			N("その通り! これから「何が起きたか」をバージョン違いで三つ話すけど、そのどれもがそれだ。");
+			p("なんだって。");
 			Closure_Story();
 		},
-		"Flowers and rainbows and gay unicorns?": function(message){
+		"お花と虹とユニコーン?": function(message){
 			p(message);
-			N("Yes, actually! At least, in one of my three versions of what happened.");
-			p("Of course.");
+			N("その通り! これから三つのバージョンの「何が起きたか」を話すけど、少くともその一つはそうだ。");
+			p("だろうね。");
 			Closure_Story();
 		}
 	});
