@@ -27,7 +27,6 @@ function Start(){
 		}
 	});
 
-	Start_Outro();
 }
 
 function SipCoffee(message){
