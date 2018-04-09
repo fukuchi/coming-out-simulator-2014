@@ -115,12 +115,12 @@ function Closure(){
 function Closure_Story(){
 
 	if($.coming_out_stories_left==3){
-		N("Which post-coming-out story do you want to hear first?");
-		N("Don't worry, you'll get to hear all three of them.");
+		N("カミングアウト後の物語、最初にどれから聞きたい?");
+		N("大丈夫。最終的には三つとも聞くことはできるから。");
 	}else if($.coming_out_stories_left==2){
-		N("Now, which version do you want to hear next?");
+		N("じゃ、次にどのバージョンを聞きたい?");
 	}else if($.coming_out_stories_left==1){
-		N("Finally, let's hear the last story...");
+		N("それでは最後の物語を話すよ...");
 	}else{
 		Finale_1();
 		return;
@@ -129,9 +129,9 @@ function Closure_Story(){
 	$.coming_out_stories_left -= 1;
 
 	var options = [];
-	if(!$.told_story_lie) options["The Lie."]=Tell_Me_A_Lie;
-	if(!$.told_story_truth) options["The Truth."]=Tell_Me_A_Truth;
-	if(!$.told_story_half_truth) options["The Half-Truth."]=Tell_Me_A_Half_Truth; 
+	if(!$.told_story_lie) options["「嘘」"]=Tell_Me_A_Lie;
+	if(!$.told_story_truth) options["「真実」"]=Tell_Me_A_Truth;
+	if(!$.told_story_half_truth) options["「半分の真実」"]=Tell_Me_A_Half_Truth; 
 	Choose(options);
 
 }
@@ -139,10 +139,10 @@ function Closure_Story(){
 function Is_Last_Story(){
 	if($.coming_out_stories_left==0){
 		if($.asked_about && $.asked_credits){
-			p("Again, with the making the only option a clickable option...");
+			p("またかよ、一つしか選択肢がないのにそれをクリックさせ...");
 		}else{
-			p("Why did you make that a clickable option, when it was the only option left.");
-			N("No idea. Moving on.");
+			p("これしか選択肢が残ってないのに、なんでわざわざクリックさせたの?");
+			N("さあてね。続けるよ?");
 		}
 	}
 }
@@ -161,10 +161,10 @@ function Tell_Me_A_Lie(message){
 	Show("nicky","coffee_nicky_still");
 	Show("cup","cup_steam");
 
-	N("Very well.");
+	N("いいだろう。");
 	Is_Last_Story();
 
-	N("I ran away from home, with nothing more than a luggage bag full of edible underwear.");
+	N("僕は家を飛び出した。I ran away from home, with nothing more than a luggage bag full of edible underwear.");
 	if($.im_a_poet){
 		N("I roamed the Great White North. Supporting myself by writing amateur poetry for strangers.");
 	}else{
