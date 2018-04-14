@@ -164,16 +164,16 @@ function Tell_Me_A_Lie(message){
 	N("いいだろう。");
 	Is_Last_Story();
 
-	N("僕は家を飛び出した。I ran away from home, with nothing more than a luggage bag full of edible underwear.");
+	N("僕は家を飛び出した。カバンいっぱいに食べられるセクシー下着だけ詰め込んでね。");
 	if($.im_a_poet){
-		N("I roamed the Great White North. Supporting myself by writing amateur poetry for strangers.");
+		N("カナダ中をあてどもなくさまよった。放浪者向けのアマチュア詩を書いて食いつなぎながら。");
 	}else{
-		N("I roamed the Great White North. Supporting myself by making not-fun web games.");
+		N("カナダ中をあてどもなくさまよった。たいして面白くもないWebゲームを作って食いつなぎながら。");
 	}
-	N("I ate flowers. Followed the rainbows. And befriended a homosexual unicorn.");
+	N("花を食べた。虹を追いかけた。ホモのユニコーンと友達になった。");
 	p(". . .");
-	N("Eventually I made it to Alaska, where I met an adult bisexual couple named Bonnie & Clyde.");
-	N("Bonnie was a mid-30s cougar, and Clyde was an early-40s manther.");
+	N("最後にアラスカで、ボニーとクライドって名前のバイのカップルに出会ったんだ。");
+	N("ボニーは30半ばの肉食系女で、クライドは40ちょいのちょい悪おやじ。どっちも若いペットを探してたのさ。");
 
 	// FAMILY WITH BENEFITS
 	// Weave in -- top or bottom
