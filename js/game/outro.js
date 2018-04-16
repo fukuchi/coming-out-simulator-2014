@@ -173,55 +173,55 @@ function Tell_Me_A_Lie(message){
 	N("花を食べた。虹を追いかけた。ホモのユニコーンと友達になった。");
 	p(". . .");
 	N("最後にアラスカで、ボニーとクライドって名前のバイのカップルに出会ったんだ。");
-	N("ボニーは30半ばの肉食系女で、クライドは40ちょいのちょい悪おやじ。どっちも若いペットを探してたのさ。");
+	N("ボニーは30半ばの肉食系女で、クライドは40ちょいのエロおやじ。どっちも若いペットを探してたのさ。");
 
 	// FAMILY WITH BENEFITS
 	// Weave in -- top or bottom
 
 	Choose({
-		"I guess edible undies are both food & clothing.": function(message){
+		"君の下着は衣食両用だったんだね。": function(message){
 			$.outro_convo_lie = 1;
 			p(message);
-			N("And thanks to my flexibility, the luggage bag doubles as housing!");
+			N("発想が柔軟だろ。カバンのスペースを倍に使えるんだ。");
 			Tell_Me_A_Lie_2();
 		},
-		"This story is a fractal of fracked up.": function(message){
+		"この話はフラクタルで不埒だな。": function(message){
 			$.outro_convo_lie = 2;
 			p(message);
-			N("MY STORY. MY RULES.");
+			N("僕が語ってるんだ。僕がルールさ。");
 			Tell_Me_A_Lie_2();
 		},
-		"...\"manther\".": function(message){
+		"...「エロおやじ」ね。": function(message){
 			$.outro_convo_lie = 3;
 			p(message);
-			N("Also known as a faguar.");
+			N("正確には「ホモエロおやじ」だな。");
 			Tell_Me_A_Lie_2();
 		}
 	});
 }
 function Tell_Me_A_Lie_2(){
 	
-	N("They took me in as their foster child, and I was their full-time boytoy.");
+	N("彼らは僕を養子に迎えて、フルタイムのお稚児さんにしたって訳さ。");
 
 	if($.outro_convo_lie==1){
-		p("...Thanks again to your, uh, flexibility.");
+		p("...なるほど。そこでも君の、その、柔軟性が役立ったんだな。");
 	}
 
 	switch($.top_or_bottom){
-		case "top": N("As we know, I like having my partners be 'the woman' of a relationship."); break;
-		case "bottom": N("As we know, I'm usually 'the woman' of a relationship."); break;
-		case "versatile": N("As we know, I like taking turns at being 'the woman' of a relationship."); break;
+		case "top": N("わかるだろ、僕は彼らを「女」にして、楽しませてもらったよ。"); break;
+		case "bottom": N("わかるだろ。僕はもっぱら「女」役を楽しんだ。"); break;
+		case "versatile": N("わかるだろ、僕らは交わりばんこで「女」役になって楽しんでたんだ。"); break;
 	}
 
-	N("They raised me, showed me love, and I grew up to be a productive member of society.");
+	N("彼らは僕を愛情こめて育ててくれて、そうして僕は大人になった。");
 
 	switch($.outro_convo_lie){
-		case 2: p("And when you zoom in on this fractal, there's MORE fracked-up-ness."); break;
-		case 3: p("...\"MANTHER\"."); break;
+		case 2: p("フラクタルよろしく、話の細部を掘り起こしていくとさらに不埒な話が出てくるんだろうな。"); break;
+		case 3: p("...「エロおやじ」。"); break;
 	}
 
-	N("They were my new family.");
-	N("Family... with benefits.");
+	N("彼らは僕の新しい家族だった。");
+	N("家族... セフレならぬセファミってところだけど。");
 
 	p(". . .");
 
@@ -245,43 +245,43 @@ function Tell_Me_A_Truth(message){
 	Show("nicky","coffee_nicky_still");
 	Show("cup","cup_steam");
 
-	N("Here it goes.");
+	N("それじゃあ始めようか。");
 	Is_Last_Story();
 
-	N("I took Jack's advice and parodied Inception in my 'odd web game', Reimagine :The Game:.");
+	N("僕はジャックのアドバイスに従って、インセプションをパロった「変な Web ゲーム」を作った。\"Reimagine :The Game:\"ってのがそれだ。");
 	switch($.inception_answer){
-		case "awake": N("Didn't say that Cobbs was awake in the ending, though."); break;
-		case "dream": N("Didn't say that the movie was all just a dream, though."); break;
-		case "neither": N("Still think it doesn't matter if Cobbs was still dreaming."); break;
+		case "awake": N("コブは最後に現実世界に戻れたって言ってたじゃん。"); break;
+		case "dream": N("結局のところ、あの映画はぜんぶがただの夢だ、って言ってなかったっけ。"); break;
+		case "neither": N("まだ、コブにとってあれが夢なのか現実なのかはどうでもいい、って思ってるのか。"); break;
 	}
-	N("Reimagine :The Game: got internet-famous-ish! A good portfolio piece.");
-	N("A few months later, I landed an internship at Electronic Arts in the Bay Area. Far away from my family in Canada.");
+	N("\"Reimagine :The Game:\" はネットで悪名を轟かせたね! 僕のポートフォリオのいいネタになったよ。");
+	N("数ヶ月後、ベイエリアでエレクトロニック・アーツ(EA)でのインターンシップに受かることができた。カナダの家族からは遠く離れてね。");
 
 	Choose({
-		"Eww, Electronic Arts...?": function(message){
+		"うへっ、エレクトロニック・アーツ...?": function(message){
 			$.outro_convo_truth = 3;
 			p(message);
 
-			N("Yeah, I know, I know.");
-			N("I'm now repenting for my sins by making artsy-fartsy indie games like this one.");
-			p("Repent harder, dammit.");
+			N("はいはい、わかってる、わかってるって。");
+			N("あんなアート臭い系クソインディーゲームを作ってしまった罪深さは十分自覚しているよ。");
+			p("しっかり悔い改めろよ、クソ。");
 			Tell_Me_A_Truth_2();
 		},
-		"And the Bay Area is very LGBT friendly.": function(message){
+		"それにベイエリアならLGBTにもっと優しいしな。": function(message){
 			$.outro_convo_truth = 2;
 			p(message);
 
-			N("That's why they call it the Gay Area!");
-			p("Uh.. nobody calls it that.");
+			N("だからみんな「ゲイエリア」って呼んでるんだ。");
+			p("えーと... 誰もそんな風に呼んでないだろ。");
 			Tell_Me_A_Truth_2();
 		},
-		"Oh, I love EA! They make The Sims, right?": function(message){
+		"EA! いいね。「シムズ」作ったところだろ?": function(message){
 			$.outro_convo_truth = 1;
 			p(message);
 
-			N("Yup! I didn't work on those, though. Our team was making a web game version of--");
-			N("[LITERALLY CANNOT DISCLOSE]");
-			p("Oh.");
+			N("その通り! でも僕はそれには関わってなくて、僕がいたチームは Web 版の—");
+			N("[禁則事項]");
+			p("えっ...");
 			Tell_Me_A_Truth_2();
 		}
 	});
@@ -289,17 +289,17 @@ function Tell_Me_A_Truth(message){
 }
 function Tell_Me_A_Truth_2(){
 	
-	N("After EA, I went on to go indie.");
-	N("But I stayed in touch with friends at EA, and stayed in the Bay Area.");
+	N("EA の後、僕はインディーにまた戻った。");
+	N("でも EA で知り合った友達とは連絡を取り続けてて、ベイエリアにとどまっていた。");
 
-	N("My technical skills grew.");
-	N("My social skills grew.");
-	N("And here... I'm finally starting to figure out my identity.");
+	N("僕の技術は向上した。");
+	N("社会的にも成長した。");
+	N("そして... こんな感じで僕自身のアイデンティティも形作り始めた。");
 
 	switch($.outro_convo_truth){
-		case 1: p("Well, I'm looking forward to Literally Cannot Disclose: The Game."); break;
-		case 2: p("But seriously, no one calls it the Gay Area."); break;
-		case 3: p("But seriously, ew. Electronic Arts."); break;
+		case 1: p("なるほどね。僕は「禁則事項」ゲームの方も気になるけどね。"); break;
+		case 2: p("でも真面目な話、誰も「ゲイエリア」なんて言わない。"); break;
+		case 3: p("でも真面目な話、エレクトロニック・アーツ。うげぇ。"); break;
 	}
 
 	Closure_Story();
@@ -321,22 +321,22 @@ function Tell_Me_A_Half_Truth(message){
 	Show("nicky","coffee_nicky_still");
 	Show("cup","cup_steam");
 
-	N("As you wish.");
+	N("仰せの通りに。");
 	Is_Last_Story();
 
-	N("Claire, in an ironic twist of fate, was also bisexual.");
-	N("We told each other about it during a "+$.studying_subject+" study session.");
+	N("クレアは、運命というのは皮肉なもので、やっぱりバイセクシャルだったんだ。");
+	N("僕らは"+$.studying_subject+"の勉強の合間に、お互いの境遇について語り合った。");
 
-	p("What a twist!");
+	p("そりゃ皮肉が効いてるね!");
 
-	N("Claire was insecure about her sexual orientation, like me.");
-	N("We were both somewhat inexperienced. Claire's only been with women, and I've only been with Jack.");
+	N("クレアも自分の性的指向については自分でもよくわかってなくてね、僕のように。");
+	N("僕らはそんなに経験を積んでなかった。クレアは女としか付き合ったことがなかったし、僕はジャックだけだ。");
 
 	// CLAIRE AND I HELPED EACH OTHER EXPLORE OURSELVES, LESS GUILT, MORE EXPERIENCE.
 	// Weave in -- studying what
 
 	Choose({
-		"A mirror version of you, but reversed...": function(message){
+		"君とそっくりだな、逆だけど...": function(message){
 			$.outro_convo_half_truth = 1;
 			p(message);
 			N("Well, uh, all mirror images are reversed.");
@@ -344,17 +344,17 @@ function Tell_Me_A_Half_Truth(message){
 			N("But yeah, Claire and I shared our experiences with one another.");
 			Tell_Me_A_Half_Truth_2();
 		},
-		"So, you taught each other the other side?": function(message){
+		"お互いに相手の世界を教え合った?": function(message){
 			$.outro_convo_half_truth = 3;
 			p(message);
 			Tell_Me_A_Half_Truth_2();
 		},
-		"Did you end up having sexytimes together?": function(message){
+		"ついにはセクシーな時間を一緒に過ごすようになった?": function(message){
 			$.outro_convo_half_truth = 2;
 			p(message);
-			N("No. She's like a sister to me. A sister I would not have sex with.");
-			p("You... did not need to clarify that.");
-			N("But yeah, Claire and I shared our experiences with one another.");
+			N("いや。彼女は妹みたいなもんだった。セックスの相手としてみなさない方の妹ね。");
+			p("お前... そこわざわざ断わらなくていいよ。");
+			N("ともかく、クレアと僕はそれぞれの経験について教え合った。");
 			Tell_Me_A_Half_Truth_2();
 		}
 	});
@@ -362,9 +362,9 @@ function Tell_Me_A_Half_Truth(message){
 }
 function Tell_Me_A_Half_Truth_2(){
 	
-	N("And exchanged tips!");
-	N("Like... do a 'come hither' motion with your fingers, or, rub the head against the roof of your mouth.");
-	p("T.M.I, dude...");
+	N("ついでにテクも教え合ったんだろ!");
+	N("ああ... 指で相手を誘う仕草とか、上あごのところで相手のを上手に刺激する方法とか。");
+	p("そこまで細かく言えとは言ってないだろ...");
 
 	if($.changing_schools || !$.father_oblivious){
 		N("I did move to her school, in the end.");
