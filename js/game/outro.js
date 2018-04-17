@@ -96,10 +96,10 @@ function Closure(){
 			p("なんだそりゃ。");
 			Closure_Story();
 		},
-		"あ、「きっとよくなる (It Gets Better&trade;)」ってやつ?": function(message){
-			p(message);
+		"わかった、「きっとよくなる (It Gets Better&trade;)」?": function(message){
+			p("あ、わかった。「きっとよくなる (It Gets Better&trade;)」キャンペーンみたいな話?");
 			N("その通り! これから「何が起きたか」をバージョン違いで三つ話すけど、そのどれもがそれだ。");
-			p("なんだって。");
+			p("なんだそりゃ。");
 			Closure_Story();
 		},
 		"お花と虹とユニコーン?": function(message){
@@ -221,7 +221,7 @@ function Tell_Me_A_Lie_2(){
 	}
 
 	N("彼らは僕の新しい家族だった。");
-	N("家族... セフレならぬセファミってところだけど。");
+	N("家族... セフレならぬ「セファミ」ってところだけど。");
 
 	p(". . .");
 
@@ -250,9 +250,9 @@ function Tell_Me_A_Truth(message){
 
 	N("僕はジャックのアドバイスに従って、インセプションをパロった「変な Web ゲーム」を作った。\"Reimagine :The Game:\"ってのがそれだ。");
 	switch($.inception_answer){
-		case "awake": N("コブは最後に現実世界に戻れたって言ってたじゃん。"); break;
-		case "dream": N("結局のところ、あの映画はぜんぶがただの夢だ、って言ってなかったっけ。"); break;
-		case "neither": N("まだ、コブにとってあれが夢なのか現実なのかはどうでもいい、って思ってるのか。"); break;
+		case "awake": N("コブは最後に現実世界に戻れたって言わなかったっけ。"); break;
+		case "dream": N("結局のところ、あの映画はぜんぶがただの夢だ、って言わなかったっけ。"); break;
+		case "neither": N("コブにとってあれが夢なのか現実なのかは、今でもやっぱりどうでもいいって思うよ。"); break;
 	}
 	N("\"Reimagine :The Game:\" はネットで悪名を轟かせたね! 僕のポートフォリオのいいネタになったよ。");
 	N("数ヶ月後、ベイエリアでエレクトロニック・アーツ(EA)でのインターンシップに受かることができた。カナダの家族からは遠く離れてね。");
@@ -339,9 +339,9 @@ function Tell_Me_A_Half_Truth(message){
 		"君とそっくりだな、逆だけど...": function(message){
 			$.outro_convo_half_truth = 1;
 			p(message);
-			N("Well, uh, all mirror images are reversed.");
-			p("You know what I mean.");
-			N("But yeah, Claire and I shared our experiences with one another.");
+			N("うーん、逆だったらそっくりにはならないんじゃない?");
+			p("俺の言ってる意味はわかってるだろ。");
+			N("ともかく、クレアと僕はそれぞれの経験について教え合った。");
 			Tell_Me_A_Half_Truth_2();
 		},
 		"お互いに相手の世界を教え合った?": function(message){
@@ -367,7 +367,7 @@ function Tell_Me_A_Half_Truth_2(){
 	p("そこまで細かく言えとは言ってないだろ...");
 
 	if($.changing_schools || !$.father_oblivious){
-		N("I did move to her school, in the end.");
+		N("最終的に、僕は彼女の学校へ転校した。");
 	}
 
 	N("We were best friends. We still are! We've now both moved to the US, far away from our hateful families.");
