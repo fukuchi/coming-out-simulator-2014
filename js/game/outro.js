@@ -69,7 +69,7 @@ function Closure(){
 	Show("cup","cup_steam");
 
 	N("前にも言ったけど、ゲーム中のキャラクターは色々と変えてあるからね。");
-	N("名前もぜんぶ変えてある。僕の以外はね。");
+	N("名前もぜんぶ変えてある。僕の以外は。");
 	N("僕の弟も出てこない。無関係だからね。");
 	N("あと、父親をゲーム中に引っ張り出してるけど、本当は2010年より前に家を出てるんだ。");
 
@@ -370,11 +370,11 @@ function Tell_Me_A_Half_Truth_2(){
 		N("最終的に、僕は彼女の学校へ転校した。");
 	}
 
-	N("We were best friends. We still are! We've now both moved to the US, far away from our hateful families.");
-	N("Together, we helped each other overcome our insecurities, and discover who we were...");
+	N("僕らはいい友達だった。今でもね! 僕も彼女も、忌しき自分の家族から離れて、アメリカへとやって来た。");
+	N("僕らは一緒に、それまで抱えてきた不安を克服して、自分自身を取り戻したんだ...");
 	N("Proud bisexual sluts.");
 
-	p("What a touching story. I think.");
+	p("いい話じゃないか。本当に。");
 	
 	N("And of course, we wingman/wingwoman for each other.");
 
@@ -390,7 +390,7 @@ function Tell_Me_A_Half_Truth_2(){
 
 function Finale_1(){
 	
-	N("And that's the last of the post-coming-out stories!");
+	N("さて、これでカミングアウト後の物語はこれで終わりだ。");
 
 	// HACK - Just clear dialogue & stuff.
 	Wait(1000);
@@ -405,36 +405,36 @@ function Finale_1(){
 
 	//////////////////////////
 
-	N("Dear player, I couldn't help but notice...");
+	N("プレイヤー君、どうしても聞いておきたいんだけど...");
 	if($.order_of_stories[0]=="truth"){
-		N("You went straight for the Truth first.");
+		N("君は真っ先に「真実」の物語を選んだね。");
 	}else if($.order_of_stories[2]=="truth"){
-		N("You saved the Truth for last.");
+		N("君は「真実」の話を最後までとっておいた。");
 	}else if($.order_of_stories[0]=="lie"){
-		N("You wanted to hear the Lie first.");
+		N("君は最初に「嘘」の話を聞きたがった。");
 	}else{
-		N("You saved the Lie for last.");
+		N("君は「嘘」の話を最後までとっておいた。");
 	}
-	N("What does that say about you?...");
+	N("その選択は君の性格をどう表わしていると思う?...");
 	p(". . .");
 
-	p("You know... usually when a game gives you multiple endings, they don't do them ALL AT ONCE.");
-	N("Hah! You thought these were ENDINGS?");
+	p("あの... 普通のゲームは、マルチエンディングだとして、それを一度にぜんぶ見せる、なんてことはしないよな。");
+	N("へぇ! 君はこれが「エンディング」だと思ってたの?");
 
 	Choose({
-		"Let me guess... This Is Just The Beginning?": function(message){
+		"それって... これはただの始まりだ、ってこと?": function(message){
 			p(message);
-			N("This is just the begi-- oh. Okay, yeah.");
+			N("これはただの始まり—ああ、うん、そうだね。");
 			Finale_2();
 		},
-		"Well yeah. This game's over, right?": function(message){
+		"ああ、これはゲームオーバーか。だろ?": function(message){
 			p(message);
-			N("True... but the story, which is my story, my life, continues.");
+			N("まあね... でも物語は、つまり僕の物語、僕の人生は、まだ続くけどね。");
 			Finale_2();
 		},
-		"oh god how long IS this damn game.": function(message){
+		"ふざけんな、このゲームまだ続くのかよ。": function(message){
 			p(message);
-			N("Don't worry. Your next choice is the very last one, I swear.");
+			N("大丈夫。次の選択肢が、本当に最後のだ。約束するよ。");
 			Finale_2();
 		}
 	});
@@ -446,9 +446,9 @@ function Finale_2(){
 	Show("nicky","coffee_nicky_packup_1");
 
 	N(". . .");
-	N("You know, if I could go back and relive all my other possible choices...");
-	N("... which in a sense, I did, by writing this game...");
-	N("... I wouldn't change a thing.");
+	N("あのさ。もし過去に戻って他の人生を選び直せるとしたら...");
+	N("... ある意味、このゲームを作ったことでそれに近いことをやっているんだけど...");
+	N("... それでも何一つ変えないだろうね。");
 
 	Show("nicky","coffee_nicky_packup_2");
 
@@ -459,21 +459,21 @@ function Finale_2(){
 	p("? ? ?");
 
 	if($.punched){
-		N("My texts getting read. Being forced to change schools. Getting punched in the face.");
+		N("僕のメールは読まれた。転校もさせられた。顔も殴られた。");
 	}else if($.father_oblivious==false){
-		N("My texts getting read. Being forced to change schools. All the verbal abuse.");
+		N("僕のメールは読まれた。転校もさせられた。山ほどの言葉の暴力。");
 	}else if($.changing_schools){
-		N("My texts getting read. Being forced to change schools. The attempted 'gay rehab' with Claire.");	
+		N("僕のメールは読まれた。転校もさせられた。クレア相手に「ゲイリハビリ」をさせられそうになった。");	
 	}else{
-		N("My texts getting read. No more after-school hours to myself. The attempted 'gay rehab' with Claire.");
+		N("僕のメールは読まれた。学校から帰った後の自由は失われた。クレア相手に「ゲイリハビリ」をさせられそうになった。");
 	}
 
-	N("In a Stockholm Syndrome sort of sense... I'm grateful for it all.");
+	N("ストックホルム症候群かって感じだけど... そのすべてに僕は感謝してる。");
 
 	Choose({
-		"what.": Finale_3,
-		"whaaat.": Finale_3,
-		"whaaaaaaaaaaaaaaat.": Finale_3
+		"えっ?": Finale_3,
+		"ええっ?": Finale_3,
+		"えええええええええっ?": Finale_3
 	});
 
 }
@@ -485,28 +485,27 @@ function Finale_3(message){
 	PlaySound("sfx","laptop_pack");
 	Show("nicky","coffee_nicky_packup_3");
 
-	N("Yes, really!");
-	N("I wouldn't have been so motivated to forge my own life... if my previous life wasn't total utter shit.");
+	N("ああ、本当さ!");
+	N("もし僕のそれまでの人生があんな糞みたいなものじゃなかったら... 僕は自分の人生を自分の力で築き上げることに、ここまで積極的にはなれなかったと思う。");
 
 	PlaySound("sfx","laptop_pack_2");
 	Show("nicky","coffee_nicky_packup_4");
 
-	N("Later in 2010, Dan Savage launched the It Gets Better&trade; campaign.");
-	N("My three stories... Lie, Truth, Half-Truth... they're all at least true about one thing.");
-	N("It does get better.");
+	N("あの後、2010年に Dan Savage は、若い同性愛者へ応援メッセージを送る、「きっとよくなる (It Gets Better&trade;)」というキャンペーンを始めた。");
+	N("僕の三つの物語...嘘、 真実、 半分の真実... そのどれもが、少なくとも一つの点については、真実を物語っている。");
+	N("まさしく、人生はよくなるんだ。");
 
 	p(". . .");
 
-	N("And...");
-	N("At the end...");
-	N("Of this long, stupid, painful game...");
-	N("Where I played against people who should have been on my side...");
+	N("そして...");
+	N("この長い、愚かで、痛ましいゲームの最後で...");
+	N("味方だと思っていた連中を相手に回して..");
 
 	p(". . .");
 
-	N("I won.");
+	N("僕は勝った。");
 	N(". . .");
-	N("I won.");
+	N("僕は勝った。");
 
 	// HACK - Just clear dialogue & stuff.
 	Wait(1000);
@@ -537,14 +536,14 @@ function Finale_3(message){
 
 	PlaySound("sfx","step_2",{volume:0.25});
 	Choose({
-		"REPLAY?": Finale_4
+		"リプレイ?": Finale_4
 	});
 
 }
 function Finale_4(message){
 	
 	p(message);
-	N("Real life has no replays.");
+	N("現実にはリプレイなんてない。");
 
 	Wait(800);
 	queue(function(){
