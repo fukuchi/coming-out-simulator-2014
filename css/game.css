@@ -256,7 +256,7 @@ body{
 	border-right-color: inherit;
 }
 #game #dialogue > div.right{
-	text-align: right;
+	text-align: left;
 	float:right;
 }
 #game #dialogue > div.right:after{
