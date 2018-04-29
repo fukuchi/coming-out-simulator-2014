@@ -270,7 +270,7 @@ function Father_Soon(message){
 			break;
 	}
 
-	m("いいわね?...");
+	m("いいわね...?");
 
 	Choose({
 		"わかったよ。": function(message){

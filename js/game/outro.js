@@ -96,7 +96,7 @@ function Closure(){
 			p("なんだそりゃ。");
 			Closure_Story();
 		},
-		"わかった、「きっとよくなる (It Gets Better&trade;)」?": function(message){
+		"ああ、「きっとよくなる (It Gets Better&trade;)」?": function(message){
 			p("あ、わかった。「きっとよくなる (It Gets Better&trade;)」キャンペーンみたいな話?");
 			N("その通り! これから「何が起きたか」をバージョン違いで三つ話すけど、そのどれもがそれだ。");
 			p("なんだそりゃ。");
@@ -349,7 +349,7 @@ function Tell_Me_A_Half_Truth(message){
 			p(message);
 			Tell_Me_A_Half_Truth_2();
 		},
-		"ついにはセクシーな時間を一緒に過ごすようになった?": function(message){
+		"最後にはセクシーな仲になったってか?": function(message){
 			$.outro_convo_half_truth = 2;
 			p(message);
 			N("いや。彼女は妹みたいなもんだった。セックスの相手としてみなさない方の妹ね。");
@@ -362,9 +362,9 @@ function Tell_Me_A_Half_Truth(message){
 }
 function Tell_Me_A_Half_Truth_2(){
 	
-	N("ついでにテクも教え合ったんだろ!");
-	N("ああ... 指で相手を誘う仕草とか、上あごのところで相手のを上手に刺激する方法とか。");
-	p("そこまで細かく言えとは言ってないだろ...");
+	N("ついでにテクも教え合ったんだ!");
+	N("例えば... 指で相手を誘う仕草とか、上あごのところで相手のを上手に刺激する方法とか。");
+	p("そこまで細かいこと言えとは言ってないだろ...");
 
 	if($.changing_schools || !$.father_oblivious){
 		N("最終的に、僕は彼女の学校へ転校した。");
